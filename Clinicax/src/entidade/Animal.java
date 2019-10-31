@@ -1,5 +1,6 @@
 package entidade;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Animal {
@@ -55,7 +56,7 @@ public class Animal {
 	public void setIdade(String idade) {
 		this.idade = idade;
 	}
-	public void setDataBascimento( Date d )
+	public void setDataBascimento( LocalDate d )
 	{
 		this.dataNascimento = d;
 	}
