@@ -1,6 +1,7 @@
 package entidade;
 
 import java.text.DateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,12 +14,13 @@ public class Funcionario extends Pessoa{
 
 	
 	
-	Date dataAdmissao;
-	private DateFormat dataAdmisao;
+	//Date dataAdmissao;
+	
+	private LocalDate dataAdmissao;
 	//Date data = c.getTime();
 
 	//dificuldade logica a respeito de como os arraylists recebem o obj do construtor
-	public Funcionario(String nome, Endereco end,String cpf,Date dataNascimento, String ctps,Date dataAdmissao) {	
+	public Funcionario(String nome, Endereco end,String cpf,LocalDate dataNascimento, String ctps,LocalDate dataAdmissao) {	
 		
 		super(nome,end,cpf,dataNascimento);		
 		this.ctps = ctps;		
@@ -38,37 +40,16 @@ public class Funcionario extends Pessoa{
 
 	
 
-	public DateFormat getDataAdmisao() {
-		return dataAdmisao;
-	}
-
-	public void setDataAdmisao(DateFormat dataAdmisao) {
-		Calendar c = Calendar.getInstance();
-		DateFormat dataAux = dataAdmisao.getDateTimeInstance();
-		
-		
-		this.dataAdmisao = dataAux;
-	}
-
-	public Date getDataAdmissao() {
+	public LocalDate getDataAdmisao() {
 		return dataAdmissao;
 	}
 
-	public void setDataAdmissao(Date dataAdmissao) {
-		this.dataAdmissao = dataAdmissao;
+	public void setDataAdmisao() {
+		LocalDate agora =  LocalDate.now();
+		this.dataAdmissao = agora;
+		
+	
 	}
-
-	public DateFormat getFormataData() {
-		Calendar c = Calendar.getInstance();
-		 Date data = c.getTime();
-		return dataAdmisao;
-	}
-
-
-	public void setFormataData(DateFormat formataData) {
-		this.dataAdmisao = DateFormat.getDateTimeInstance();// a chamada do retorno deve ser 
-	}
-
 
 	@Override
 	public String toString() {

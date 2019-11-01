@@ -2,15 +2,16 @@ package entidade;
 
 
 import java.text.DateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Medicamento extends Produto {
 
 	private String lote;
-	private Date dataValidade;
+	private LocalDate dataValidade;
 
-	public Medicamento(String cod, String nome, int qnt, double vc, double vv, String lote, Date d) {
+	public Medicamento(String cod, String nome, int qnt, double vc, double vv, String lote, LocalDate d) {
 		super(cod, nome, qnt, vc, vv);
 		this.lote = lote;
 		this.dataValidade = d;  
@@ -31,6 +32,14 @@ public class Medicamento extends Produto {
 
 	public void setLote(String lote) {
 		this.lote = lote;
+	}
+
+	public LocalDate getDataValidade() {
+		return dataValidade;
+	}
+
+	public void setDataValidade(LocalDate dataValidade) {
+		this.dataValidade = dataValidade;
 	}
 
 }

@@ -1,5 +1,7 @@
 package entidade;
 
+import java.time.LocalDate;
+
 public abstract class Produto {
 
 	private String cod;
@@ -7,14 +9,17 @@ public abstract class Produto {
 	private int qnt;
 	private double valorVenda;
 	private double valorCompra;
-
+	private LocalDate dataValidade;
 	
-	public Produto(String cod, String nome, int qnt, double vv, double vc) {
+	
+	public Produto(String cod, String nome, int qnt, double vv, double vc, LocalDate dataValidade) {
+	
 		this.cod = cod;
 		this.nome = nome;
 		this.qnt = qnt;
 		this.valorVenda = vv;
 		this.valorCompra = vc;
+		this.dataValidade = dataValidade;
 	}
 	public String getCod() {
 		return cod;
@@ -47,5 +52,13 @@ public abstract class Produto {
 	public void setValorCompra(double valorCompra) {
 		this.valorCompra = valorCompra;
 	}
+	public LocalDate getDataValidade() {
+		return dataValidade;
+	}
+	public void setDataValidade(LocalDate dataValidade) {
+		this.dataValidade = dataValidade;
+	}
+	
+	
 
 }

@@ -1,15 +1,16 @@
  package entidade;
 
 import java.text.DateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Veterinario extends Pessoa{
 	
-	private Date dataAdmissao;
+	private LocalDate dataAdmissao;
 	private String crmv;	
 		
-	public Veterinario(String nome, Endereco enderco,String cpf,Date dataNascimento, String crmv,Date dataAdmissao ) 
+	public Veterinario(String nome, Endereco enderco,String cpf,LocalDate dataNascimento, String crmv,LocalDate dataAdmissao ) 
 	{
 		super(nome, enderco,cpf,dataNascimento);
 		this.crmv = crmv;
@@ -24,10 +25,10 @@ public class Veterinario extends Pessoa{
 	public void setCrmv(String crmv) {
 		this.crmv = crmv;
 	}
-	public Date getDataAdmissao() {
+	public LocalDate getDataAdmissao() {
 		return dataAdmissao;
 	}
-	public void setDataAdmissao(Date dataAdmissao) {
+	public void setDataAdmissao(LocalDate dataAdmissao) {
 		this.dataAdmissao = dataAdmissao;
 	}
 	@Override

@@ -1,5 +1,6 @@
 package entidade;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -49,5 +50,7 @@ public class Cliente extends Pessoa{
 	public String toString() {
 		return "\n Cliente\n Cpf:" + super.getCpf() + "\n Nome:" +super.getNome() ;
 	}
+	
+	
 	
 }

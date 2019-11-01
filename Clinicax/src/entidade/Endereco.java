@@ -1,7 +1,7 @@
 package entidade;
 
 public class Endereco {
-	
+	//implementar cod do cliente ou id do endereco?
 	private String rua;
 	private String bairro;
 	private String cep;
