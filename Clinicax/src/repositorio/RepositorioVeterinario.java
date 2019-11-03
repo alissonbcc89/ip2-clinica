@@ -29,9 +29,6 @@ public class RepositorioVeterinario implements IVeterinario{
 		return instance;
 	}
 	
-	
-	
-
 	@Override
 	public void adicionar(Veterinario vet) throws NullPointerException 
 	{
@@ -47,7 +44,7 @@ public class RepositorioVeterinario implements IVeterinario{
 		// TODO Auto-generated method stub
 		
 		
-		controlRepVet.remover(vet);
+		veterinarios.remove(vet);
 	}
 
 	@Override

@@ -7,23 +7,15 @@ public class ControlRepVeterinario {
 	RepositorioVeterinario repVet;	
 	
 	
-	public void adicionar(Veterinario vet)throws NullPointerException 
+	public void adicionar(Veterinario vet) 
 	{
 		repVet.adicionar(vet);
 	}
 	public void remover(Veterinario vet) {
 		// TODO Auto-generated method stub
-		
-		
-		for(int i = 0; i< repVet.veterinarios.size();i++)
-		{
-			if(repVet.veterinarios.get(i).getCrmv().equals(vet.getCrmv()))
-			{
-				repVet.veterinarios.remove(repVet.veterinarios.get(i));
-				System.out.println("\n Excluido");
-			}
-			
-		}
+		//os dois fazem a mesma coisa?
+		repVet.veterinarios.remove(vet);
+		repVet.remover(vet);
 		
 	}
 
@@ -46,8 +38,12 @@ public class ControlRepVeterinario {
 		  
 		for(int i = 0; i< repVet.veterinarios.size() ; i++ )
 	 	{	
-		 	repVet.veterinarios.set(i, vet);
+			if(repVet.veterinarios.get(i).getCrmv().equals(vet.getCrmv()))
+			{
+				repVet.veterinarios.set(i, vet);
+			}
 	 	}
-		}
+		
+	}
 
 }
