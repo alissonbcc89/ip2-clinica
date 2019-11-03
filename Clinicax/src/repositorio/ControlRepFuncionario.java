@@ -1,5 +1,10 @@
 package repositorio;
 
+import java.util.ArrayList;
+
+import com.sun.glass.ui.Size;
+import com.sun.javafx.iio.ios.IosDescriptor;
+
 import entidade.Funcionario;
 
 //todas as definições de como alterar remover pesquisar e adicionar ficaram na classe controler e o repositorio apenas chama
@@ -9,9 +14,15 @@ public class ControlRepFuncionario {
 	
 	RepositorioFuncionario repFunc;
 	
+	
+	
 	public void adicionar(Funcionario func)
 	{
-		for(int i = 0; i< repFunc.funcionarios.size(); i ++)
+		repFunc.funcionarios.add(func);
+		
+		
+		
+		/*for(int i = 0; i< repFunc.funcionarios.size(); i ++)
 		{
 		//criar um metodo que retorne se o funcionario existe ou não.
 		//if
@@ -21,11 +32,25 @@ public class ControlRepFuncionario {
 		}
 		
 	}
-		repFunc.adicionar(func);
-	}
+		repFunc.adicionar(func);*/
+}
 	
 	public void remover(Funcionario func)
 	{
+		for(int i = 0; i<repFunc.funcionarios.size(); i++)
+		{
+			if(repFunc.funcionarios.get(i).getCpf().equals((func.getCpf())))
+				{
+				
+				repFunc.funcionarios.remove(func);		
+				
+				}
+			
+		}
+		
+	
+		
+		/*
 		for(int i = 0; i< repFunc.funcionarios.size(); i ++)
 		{
 			if(repFunc.funcionarios.get(i).getCpf().equals(func.getCpf()))
@@ -34,26 +59,36 @@ public class ControlRepFuncionario {
 			}
 		}
 		
-		
+		*/
 	}
-/*	public void alterar(Funcionario funcionario)
+	
+	public void alterar (Funcionario funcionario)
 	{
-		for(int i = 0; i< repFunc.funcionarios.size(); i ++)
+		for(int i = 0; i < repFunc.funcionarios.size(); i++)
 		{
 			if(repFunc.funcionarios.get(i).getCpf().equals(funcionario.getCpf()))
 			{
 				repFunc.funcionarios.set(i,funcionario);
 			}
+			
 		}
-	}*/
-
-	public Funcionario busca(String cpf)
+		
+		/*for(int i = 0; i< repFunc.funcionarios.size(); i ++)
+		{
+			if(repFunc.funcionarios.get(i).getCpf().equals(funcionario.getCpf()))
+			{
+				repFunc.funcionarios.set(i,funcionario);
+			}
+		}*/
+	}
+	
+	public Funcionario busca(String nome)
 	{
-		if(this.existe(cpf) == true )
+		if(this.existeNome(nome) == true )
 		{
 			for(int i = 0; i<repFunc.funcionarios.size(); i ++)
 			{
-				if(repFunc.funcionarios.get(i).getCpf().equals(cpf))
+				if(repFunc.funcionarios.get(i).getNome().equals(nome))
 				{
 					return repFunc.funcionarios.get(i);
 				}
@@ -63,9 +98,42 @@ public class ControlRepFuncionario {
 		return null;
 	}
 	
+	public Funcionario buscarCpf(String cpf)
+	{
+		for(int i = 0; i < repFunc.funcionarios.size(); i ++ )
+		{
+			if(repFunc.funcionarios.get(i).getCpf().equals(cpf))
+			{
+				return repFunc.funcionarios.get(i);
+			}
+		}
+		
+		return null;
+			
+	}
+	
+	public ArrayList<Funcionario> buscarNome(String nome)
+	{
+		
+		ArrayList<Funcionario> aux;
+		aux = new ArrayList<Funcionario>();
+		
+		
+		for(int i = 0; i < repFunc.funcionarios.size(); i ++ )
+		{
+			if(repFunc.funcionarios.get(i).getNome().equals(nome))
+			{
+				aux.add( repFunc.funcionarios.get(i));
+				
+			}
+		}
+		return aux;
+	}
+	
 	public boolean existe (String cpf)
 	{
 		boolean aux = false;
+		
 		for(int i = 0; i< repFunc.funcionarios.size(); i ++)
 		{
 			if(repFunc.funcionarios.get(i).getCpf().equals(cpf))
@@ -75,26 +143,42 @@ public class ControlRepFuncionario {
 			}
 			
 		}
+		
 		return aux;
 		
 	}
-	public void alterar(Funcionario func)
+	
+	public boolean existeNome(String nome)
 	{
-		if(this.existe(func.getCpf())== true)
+		boolean aux = false;
+		ArrayList<Funcionario> funcionario = new ArrayList<Funcionario>();
+		
+		for(int i = 0; i<repFunc.funcionarios.size(); i ++)
 		{
-		for(int i = 0; i< repFunc.funcionarios.size(); i ++)
-		{
-			if(repFunc.funcionarios.get(i).getCpf().equals(func.getCpf()))
+			if(repFunc.funcionarios.get(i).getNome().equals(nome))
 			{
-				repFunc.funcionarios.set(i, func);
-				System.out.println("Alterado com sucesso");
+				aux =  true;
+				
+				funcionario.add(repFunc.funcionarios.get(i));		
+						
 			}
 		}
-		}
-		else
+		return aux;
+	}
+
+	public void atualizar(Funcionario funk)
+	{
+		for(int i = 0; i<repFunc.funcionarios.size(); i ++ )
 		{
-			System.out.println("Nao existe funcionario disponivel paraa alteracao!");
+			if(this.existe(funk.getCpf()) == true)
+			{
+				repFunc.funcionarios.set(i,funk);
+				
+			}
 		}
-		}
+	}
+	
+	
 }
+
 

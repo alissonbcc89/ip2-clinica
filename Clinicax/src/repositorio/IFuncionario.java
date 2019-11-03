@@ -13,6 +13,6 @@ public interface IFuncionario {
 	
 	void atualizar(Funcionario funcionario);
 
-	void excluir(String ctps);
+	//void excluir(String ctps);
 	
 }

@@ -10,6 +10,8 @@ public class RepositorioFuncionario implements  IFuncionario{
 	ArrayList<Funcionario> funcionarios ;
 //	ControllRepFuncionario controlfunc;
 	
+	ControlRepFuncionario controlRepFuncionario;
+	
 	private static RepositorioFuncionario instance;
 	
 	private RepositorioFuncionario()
@@ -48,29 +50,25 @@ public class RepositorioFuncionario implements  IFuncionario{
 	@Override
 	public Funcionario pesquisar(String nome) {
 		// TODO Auto-generated method stub
-		return null;
+		 return controlRepFuncionario.busca(nome);
+		
 	}
 
 	@Override
 	public void atualizar(Funcionario funcionario) {
 		// TODO Auto-generated method stub
-		
+		controlRepFuncionario.atualizar(funcionario);
 		
 	}
 
-	@Override
+	/*@Override
 	public void excluir(String ctps) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	
 		
-		
-		
-	
-
-	/*@Override
+	@Override
 	public Funcionario pesquisar(String nome){
 		
 		return controlfunc.pesquisa(nome);
