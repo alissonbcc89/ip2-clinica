@@ -1,5 +1,7 @@
 package repositorio;
 
+import java.util.ArrayList;
+
 import entidade.Medicamento;
 
 public class ControlRepMedicamento {
@@ -65,25 +67,30 @@ public class ControlRepMedicamento {
 			}
 		}
 	}
-public void removerQnt(String cod, int qnt) {
+    public void removerQnt(String cod, int qnt) {
 		
 		for(int i = 0; i < repMed.medicamentos.size(); i++)
 		{
-		if(repMed.medicamentos.get(i).getCod().equals(cod))
-		{
-			repMed.medicamentos.get(i).setQnt(repMed.medicamentos.get(i).getQnt()-qnt);
-		}
+			if(repMed.medicamentos.get(i).getCod().equals(cod))
+			{
+				repMed.medicamentos.get(i).setQnt(repMed.medicamentos.get(i).getQnt()-qnt);
+			}
+		
 		}
 	}
-/*	public void remover(Medicamento med)
-	{
-		for(int i = 0; i < repMed.medicamentos.size(); i++)
-		{
-			if(repMed.medicamentos.get(i).getCod().equals(med))
-			{
-				repMed.remover(med);
-			}
-		}
-		
-	}*/
+    public ArrayList<Medicamento> pesquisarNome(String nome)
+    {
+    	ArrayList<Medicamento> aux;
+    	aux = new ArrayList<Medicamento>();
+    	for(int i = 0; i < repMed.medicamentos.size(); i++)
+    	{
+    		if(repMed.medicamentos.get(i).getNome().equals(nome))
+    		{
+    			aux.add(repMed.medicamentos.get(i)); 
+    		}
+    		
+    	}
+    	
+    	return aux;
+    }
 }

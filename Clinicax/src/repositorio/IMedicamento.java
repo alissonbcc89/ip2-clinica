@@ -14,6 +14,8 @@ public interface IMedicamento {
 		public Produto buscar(Medicamento med);
 			
 		public void adicionarQtn(String nome, int qnt);
+		
+		
 	
 
 }

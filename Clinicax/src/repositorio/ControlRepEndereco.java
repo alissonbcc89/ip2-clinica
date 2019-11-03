@@ -21,14 +21,18 @@ public class ControlRepEndereco {
 
 	public Endereco consultar(Endereco endereco) {
 		
+		Endereco aux = null;
+		
 		for(int i = 0; i< repEnd.enderecos.size(); i ++)
 		{
 			if(repEnd.enderecos.get(i).getCep().equals(endereco.getCep()));
 			{
-				return repEnd.enderecos.get(i);
+				 aux = repEnd.enderecos.get(i);
+				 
+				 return aux;
 			}
 		}
-		return null;
+		return aux;
 	}
 
 	public void remover(Endereco end)

@@ -34,7 +34,7 @@ public class ControlRepProduto {
 		
 	}
 
-	public Produto buscar(ProdutoReal produto) {
+	public ProdutoReal buscar(ProdutoReal produto) {
 		// TODO Auto-generated method stub
 		
 		for(int i = 0; i < repProd.prodReal.size(); i++)

@@ -37,16 +37,9 @@ public class ControlRepDependente {
 	}
 	public void remover(Dependente dep) {
 		// TODO Auto-generated method stub
-		for(int i = 0; i< repDep.dependentes.size(); i ++)
-		{
-			if(repDep.dependentes.get(i).getCpf().equals(dep.getCpf()))
-			{
-				repDep.dependentes.remove(repDep.dependentes.get(i));
-			}
-		}
 		
+		repDep.dependentes.remove(dep);
 	}
-
 	public void adicionar(Dependente dep)
 	{
 		repDep.adicionar(dep);

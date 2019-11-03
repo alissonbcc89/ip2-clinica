@@ -40,7 +40,7 @@ public class RepositorioConsulta implements IRepositorioConsulta{
 	@Override
 	public void remover(Consulta consulta) {
 		// TODO Auto-generated method stub
-		controlRepConsulta.remover(consulta);	
+		consultas.remove(consulta);	
 		
 	}
 
@@ -54,6 +54,7 @@ public class RepositorioConsulta implements IRepositorioConsulta{
 
 	@Override
 	public void editar(int cod,Consulta con) {
+
 		// TODO Auto-generated method stub
 		//Ps. pode acontecer um erro referente ao parametro do método, pois como se é geraddo um formulario
 		// pode ser que não consiga direcionar os dois parametros no formulario da tela.

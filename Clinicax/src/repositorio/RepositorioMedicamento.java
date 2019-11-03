@@ -77,9 +77,4 @@ public class RepositorioMedicamento implements IMedicamento{
 		controlRepMed.adicionarQtn(nome, qnt);
 	}
 
-	public void removerQnt(String cod, int qnt) {
-		
-		medicamentos.
 	}
-	
-}

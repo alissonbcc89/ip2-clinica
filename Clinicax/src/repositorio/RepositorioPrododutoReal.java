@@ -7,7 +7,7 @@ import entidade.ProdutoReal;
 
 public class RepositorioPrododutoReal implements IProdReal {
 
-	//ControlRepProduto controlRepProd;
+	ControlRepProduto controlRepProd;
 	ProdutoReal produto;
 	ArrayList<ProdutoReal>prodReal ;
 	
@@ -49,17 +49,20 @@ public class RepositorioPrododutoReal implements IProdReal {
 	public void removeQnt(String cod, int n) {
 		// TODO Auto-generated method stub
 		
+		controlRepProd.removeQnt(cod, n);
+		
 	}
 
 	@Override
-	public Produto buscar(ProdutoReal produto) {
+	public ProdutoReal buscar(ProdutoReal produto) {
 		// TODO Auto-generated method stub
-		return null;
+			return controlRepProd.buscar(produto);
 	}
 
 	@Override
 	public void adicionarQtn(ProdutoReal produto) {
 		// TODO Auto-generated method stub
+		controlRepProd.adicionarQtn(produto);
 		
 	}
 

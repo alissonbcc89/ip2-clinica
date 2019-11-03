@@ -11,7 +11,7 @@ void adicionar(ProdutoReal prod);
 	
 	void removeQnt(String cod,int n);
 	
-	public Produto buscar(ProdutoReal produto);
+	public ProdutoReal buscar(ProdutoReal produto);
 	
 	public void adicionarQtn(ProdutoReal produto);
 	

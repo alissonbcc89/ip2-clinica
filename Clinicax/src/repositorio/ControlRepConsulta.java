@@ -2,7 +2,7 @@ package repositorio;
 
 import entidade.Consulta;
 
-public class ControlRepConsulta implements IConsulta{
+public class ControlRepConsulta {
 	
 	RepositorioConsulta repConsulta;
 	
@@ -10,7 +10,16 @@ public class ControlRepConsulta implements IConsulta{
 	
 	public Consulta buscar(int cod)
 	{
-			
+		Consulta aux = null;
+		for(int i = 0; i< repConsulta.consultas.size(); i++)
+		{
+			if(repConsulta.consultas.get(i).getId() == cod )
+			{
+				aux  = repConsulta.consultas.get(i);
+				return aux;
+			}
+		}
+		return aux;
 	}
 	
 	public void editar(int cod,Consulta con) {
@@ -20,7 +29,7 @@ public class ControlRepConsulta implements IConsulta{
 			{
 				if(repConsulta.consultas.get(i).getId() == cod)
 				{		
-					repConsulta.consultas.get(i).setValor(con.getValor());
+					repConsulta.consultas.set(i,con);
 					
 				}
 			}
@@ -30,46 +39,32 @@ public class ControlRepConsulta implements IConsulta{
 	
 	public void remover(Consulta consulta) {
 		// TODO Auto-generated method stub
-		for(int i = 0; i< repConsulta.consultas.size();i++)
-		{
-			if(repConsulta.consultas.get(i).getId() == consulta.getId())
-			{
-				repConsulta.consultas.remove(consulta);
-			}
-		}
+		repConsulta.remover(consulta);
 	}
 
-	public void adiconar(Consulta con)
+	
+	public void adicionar(Consulta con)
 	{
 		repConsulta.adicionar(con);
 	}
 
-	@Override
-	public void adcionar(Consulta consulta) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
+	
 	public void atualizar(Consulta consulta) {
 		// TODO Auto-generated method stub
-	
+
+		
 		for(int i = 0; i < repConsulta.consultas.size(); i++)
 		{
-			if(repConsulta.consultas.get(i).getId().equals(consulta.getCod());
+			if(repConsulta.consultas.get(i).getId() == consulta.getId());
 			{
-				return repConsulta.consultas.get(i);
-				
+				 repConsulta.consultas.set(i,consulta);				
 			}
 			
 		}
-		return null;
+		
 	
 	}
 
-	@Override
-	public void buscar(Consulta consulta) {
-		// TODO Auto-generated method stub
-		
-	}
+	
+	
 }

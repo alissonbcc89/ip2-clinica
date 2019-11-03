@@ -35,7 +35,7 @@ public class RepositorioDependente implements IDependente{
 	@Override
 	public void remover(Dependente dep) {
 		// TODO Auto-generated method stub
-		controlRepDep.remover(dep);	
+		dependentes.remove(dep);	
 	}
 
 	@Override
