@@ -1,12 +1,20 @@
 package repositorio;
 
+import java.util.ArrayList;
+
 import entidade.Endereco;
 
 public class ControlRepEndereco {
 	
 	RepositorioEndereco repEnd;
 	
-	public void alterar(Endereco endereco) {
+	public ControlRepEndereco()
+	{
+		this.repEnd = RepositorioEndereco.getInstance();
+	}
+	
+	//acho que esse metodo deve existir na classe pessoa e fazer a alteracao de acordo com uma busca pelo cpf
+	/*public void alterar(Endereco endereco) {
 		// TODO Auto-generated method stub
 		
 		for(int i = 0; i< repEnd.enderecos.size(); i ++)
@@ -17,19 +25,19 @@ public class ControlRepEndereco {
 			}
 		}
 		
-	}
+	}*/
 
-	public Endereco consultar(Endereco endereco) {
+	public ArrayList<Endereco> consultar(Endereco endereco) {
 		
-		Endereco aux = null;
+	ArrayList<Endereco> aux = null;
 		
 		for(int i = 0; i< repEnd.enderecos.size(); i ++)
 		{
 			if(repEnd.enderecos.get(i).getCep().equals(endereco.getCep()));
 			{
-				 aux = repEnd.enderecos.get(i);
+				 aux.add(endereco);
 				 
-				 return aux;
+				 
 			}
 		}
 		return aux;

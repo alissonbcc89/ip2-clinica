@@ -9,6 +9,11 @@ public class ControlRepDependente {
 	
 	RepositorioDependente repDep;
 	
+	public ControlRepDependente()
+	{
+		this.repDep = RepositorioDependente.getInstance();
+	}
+	
 	
 	public Dependente consultar(Dependente dep) {
 		// TODO Auto-generated method stub

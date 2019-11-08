@@ -7,6 +7,11 @@ public class ControlRepVeterinario {
 	RepositorioVeterinario repVet;	
 	
 	
+	public ControlRepVeterinario()
+	{
+	this.repVet = RepositorioVeterinario.getInstance();
+	}
+	
 	public void adicionar(Veterinario vet) 
 	{
 		repVet.adicionar(vet);

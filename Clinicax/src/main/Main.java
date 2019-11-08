@@ -1,6 +1,7 @@
 package main;
 
 import java.text.DateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -23,6 +24,14 @@ import repositorio.RepositorioProduto;
 import repositorio.RepositorioVenda;
 import repositorio.RepositorioVeterinario;
 import repositorio.Rveterinario;
+import repositorio.ControlRepAnimal;
+import repositorio.ControlRepCliente;
+import repositorio.ControlRepConsulta;
+import repositorio.ControlRepDependente;
+import repositorio.ControlRepEndereco;
+import repositorio.ControlRepFuncionario;
+import repositorio.ControlRepMedicamento;
+import repositorio.ControlRepProduto;
 import repositorio.RepFuncionario;
 import repositorio.RepositorioAnimal;
 
@@ -43,23 +52,31 @@ public class Main {
 		//o sistema ta pedindo que os repositorios sejam inicializado como null
 		
 	        
-	        RepositorioAnimal animais = new RepositorioAnimal() ;
-	        RepFuncionario funcionarios = new RepFuncionario();
-	        RepositorioConsulta consultas = new RepositorioConsulta();
-	        RepositorioDependente dependentes = new RepositorioDependente();
-	        RepositorioMedicamento medicamentos = new RepositorioMedicamento();
-	        RepositorioProduto produtos = new RepositorioProduto();
-	        RepositorioVenda vendas = new RepositorioVenda();
+	        ControlRepAnimal animais = new ControlRepAnimal() ;
+	       ControlRepFuncionario funcionarios = new ControlRepFuncionario();
+	        ControlRepConsulta consultas = new ControlRepConsulta();
+	       ControlRepDependente dependentes = new ControlRepDependente();
+	        ControlRepMedicamento medicamentos = new ControlRepMedicamento();
+	        ControlRepProduto produtos = new ControlRepProduto();
+	       // RepositorioVenda vendas = new RepositorioVenda();
 	        Rveterinario veterinarios = new Rveterinario();
-	        RepositorioEndereco enderecos = new RepositorioEndereco();
-	        RepositorioCliente clientes  = new RepositorioCliente();
+	        ControlRepEndereco enderecos = new ControlRepEndereco();
+	        ControlRepCliente clientes  = new ControlRepCliente();
 	        
 	        
-	        Endereco end = new Endereco("nova jerusalém","pau amarelo","50090690","PE","34","Brasil");
+	      //  Endereco end = new Endereco();
+	      //  enderecos.adicionar(end);
+	        endereco.setBairro("Pau - Amarelo");
+	        endereco.setRua("nova jerusalem");
+	        endereco.setCep("50090690");
+	        endereco.setEstado("PE");
+	        endereco.setNumero("34");
+	        endereco.setPais("Brasil");
+	        
 	        enderecos.adicionar(end);
 	        
 	        //String cod, String nome, int qnt, double vc, double vv, String lote
-	        Medicamento medicamento = new Medicamento("666","Atenalou",29,1.59,1.59*0.3+1.59,"A1569");
+	        Medicamento medicamento = new Medicamento("666","Atenalou",29,1.59,1.59*0.3+1.59,"A1569", null);
 	        medicamentos.adicionar(medicamento);
 	        
 	      
@@ -67,21 +84,21 @@ public class Main {
 	        
 	        
 	        //String nome,Endereco end,String cpf, ArrayList<Animal> animal, String t
-	        Cliente cliente = new Cliente("Alisson",end,"cpf","999999999");
+	        Cliente cliente = new Cliente("Alisson",end,"cpf","999999999", null);
 			clientes.adicionar(cliente);
 			
 			//clientes.buscarCpf("cpf");
-			System.out.print(clientes.pesquisarCliente("cpf"));
-			clientes.pesquisarCliente("cpf");
-			Dependente dependente = new Dependente("Filho","0008734532",cliente);
-	        Dependente dep1 = new Dependente("Esposa","00094876424",cliente);
+			System.out.print(clientes.buscarCpf("cpf"));
+			clientes.buscarCpf("cpf");
+			Dependente dependente = new Dependente("Filho","0008734532",cliente, end);
+	        Dependente dep1 = new Dependente("Esposa","00094876424",cliente, end);
 	        
 	        dependentes.adicionar(dep1);
 			dependentes.adicionar(dependente);
 			
 						
 			//String nome, String raca, String idade,String esp, Cliente c
-			Animal animal = new Animal("Bob","Vira-lata","2","Cachorro",cliente);
+			Animal animal = new Animal("Bob","Vira-lata","2","Cachorro",cliente, null);
 			
 			animais.adicionar(animal);
 			
@@ -95,8 +112,9 @@ public class Main {
 			
 			//String nome, Endereco enderco,String cpf, String crmv
 			//Veterinario veterinario = new Veterinario ("Doutor",end,"cpfver","crmv1");
+			LocalDate agora = LocalDate.now();  
 			
-			Veterinario veterinario = new Veterinario ("Doutor",end,"cpfver","crmv1");
+			Veterinario veterinario = new Veterinario ("Doutor",end,"cpfver",null, "crmv1", agora);
 			
 			veterinarios.adicionar(veterinario);
 			//veterinarios.remover(veterinario);
@@ -108,7 +126,7 @@ public class Main {
 		
 		//Veterinario veterinario = new Veterinario ("Doutor",end,"cpfver","crmv1");
 		
-		Veterinario vete = new Veterinario("",null,"cpfver","crmvtester");
+		Veterinario vete = new Veterinario("alguem",null,"cpfver",null, "crmvtester", null);
 		
 		 veterinarios.alterara(vete);
 

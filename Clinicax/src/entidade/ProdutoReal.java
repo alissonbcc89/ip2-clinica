@@ -1,13 +1,17 @@
 package entidade;
 
+import java.time.LocalDate;
+
 public class ProdutoReal extends Produto{
 
 	private String descricao;
 	
-	public ProdutoReal(String cod, String nome, int qnt, double valorVenda, double valorCompra)
+	public ProdutoReal(String cod, String nome, int qnt, double valorVenda, double valorCompra, LocalDate dataValidade,String desc)
 	{
-		super(cod,nome,qnt,valorVenda,valorCompra);
+		super(cod,nome,qnt,valorVenda,valorCompra, dataValidade);
+		this.descricao = descricao;
 	}
+	
 	@Override
 	public int getQnt() {
 		// TODO Auto-generated method stub

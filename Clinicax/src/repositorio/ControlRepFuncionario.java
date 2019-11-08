@@ -14,8 +14,10 @@ public class ControlRepFuncionario {
 	
 	RepositorioFuncionario repFunc;
 	
-	
-	
+	public ControlRepFuncionario()
+	{
+		this.repFunc = RepositorioFuncionario.getInstance();
+	}	
 	public void adicionar(Funcionario func)
 	{
 		repFunc.funcionarios.add(func);

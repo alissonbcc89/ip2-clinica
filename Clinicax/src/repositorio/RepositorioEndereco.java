@@ -47,16 +47,13 @@ public class RepositorioEndereco implements IEndereco{
 		
 	}
 	
-	@Override
-	public void alterar(Endereco endereco) {
-		// TODO Auto-generated method stub
-		controlRepEnd.alterar(endereco);
-	}
+
 
 	@Override
-	public Endereco consultar(Endereco endereco) {
+	public ArrayList<Endereco> consultar(Endereco endereco) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		 return controlRepEnd.consultar(endereco);
 	}
 
 	

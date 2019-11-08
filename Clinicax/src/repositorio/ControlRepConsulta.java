@@ -6,7 +6,10 @@ public class ControlRepConsulta {
 	
 	RepositorioConsulta repConsulta;
 	
-	
+	public ControlRepConsulta()
+	{
+		this.repConsulta = RepositorioConsulta.getInstance();
+	}
 	
 	public Consulta buscar(int cod)
 	{

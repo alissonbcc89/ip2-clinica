@@ -8,6 +8,11 @@ public class ControlRepMedicamento {
 	
 	RepositorioMedicamento repMed;
 	
+	public ControlRepMedicamento()
+	{
+		this.repMed = RepositorioMedicamento.getInstance();
+	}
+	
 	public void adicionar(Medicamento med)
 	{
 		repMed.adicionar(med);

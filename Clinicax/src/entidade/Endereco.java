@@ -10,7 +10,7 @@ public class Endereco {
 	private String pais;
 	private Pessoa pessoa;
 
-	public Endereco(String rua, String bairro, String cep, String estado, String numero, String pais,Pessoa pessoa) {
+	public Endereco(String rua, String bairro, String cep, String estado, String numero, String pais) {
 		
 		this.rua = rua;
 		this.bairro = bairro;
@@ -18,10 +18,9 @@ public class Endereco {
 		this.estado = estado;
 		this.numero = numero;
 		this.pais = pais;
-		this.pessoa = pessoa; 
+		
 	}
 
-	
 	public String getRua() {
 		return rua;
 	}
@@ -70,14 +69,7 @@ public class Endereco {
 		this.pais = pais;
 	}
 
-	public void setPessoa(Pessoa p)
-	{
-		this.pessoa = p;
-	}
-	public Pessoa getPessoa()
-	{
-		return this.pessoa;
-	}
+	
 	@Override
 	public String toString() {
 		return "Endereco [rua=" + rua + ", bairro=" + bairro + ", cep=" + cep + ", estado=" + estado + ", numero="

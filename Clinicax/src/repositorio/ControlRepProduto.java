@@ -7,6 +7,11 @@ public class ControlRepProduto {
 
 	RepositorioPrododutoReal repProd;
 	
+	public ControlRepProduto()
+	{
+		this.repProd = RepositorioPrododutoReal.getInstance();
+	}
+	
 	public void remover(ProdutoReal prod) {
 		// TODO Auto-generated method stub
 		for(int i = 0; i < repProd.prodReal.size(); i ++)

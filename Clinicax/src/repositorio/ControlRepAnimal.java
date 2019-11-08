@@ -7,7 +7,10 @@ public class ControlRepAnimal {
 	RepositorioAnimal repAnimais;
 	
 	
-	
+	public ControlRepAnimal()
+	{
+		this.repAnimais = RepositorioAnimal.getInstance();
+	}
 	
 	public void alterar(Animal animal) 
 	{

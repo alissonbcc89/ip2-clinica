@@ -7,6 +7,10 @@ public class ControlRepCliente {
 	
 	RepositorioCliente repCli;
 	
+	public ControlRepCliente()
+	{
+		this.repCli = RepositorioCliente.getInstance();
+	}
 	public void adicionar(Cliente cliente)
 	{
 		repCli.adicionar(cliente);

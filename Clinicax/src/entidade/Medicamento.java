@@ -9,12 +9,12 @@ import java.util.Date;
 public class Medicamento extends Produto {
 
 	private String lote;
-	private LocalDate dataValidade;
+//	private LocalDate dataValidade;
 
 	public Medicamento(String cod, String nome, int qnt, double vc, double vv, String lote, LocalDate d) {
-		super(cod, nome, qnt, vc, vv);
+		super(cod, nome, qnt, vc, vv,d);
 		this.lote = lote;
-		this.dataValidade = d;  
+	  
 	}
 
 	/*public Date getDataValidade() {
@@ -34,12 +34,12 @@ public class Medicamento extends Produto {
 		this.lote = lote;
 	}
 
-	public LocalDate getDataValidade() {
+	/*public LocalDate getDataValidade() {
 		return dataValidade;
 	}
 
 	public void setDataValidade(LocalDate dataValidade) {
 		this.dataValidade = dataValidade;
 	}
-
+*/
 }
