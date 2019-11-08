@@ -32,6 +32,7 @@ import repositorio.ControlRepEndereco;
 import repositorio.ControlRepFuncionario;
 import repositorio.ControlRepMedicamento;
 import repositorio.ControlRepProduto;
+import repositorio.ControlRepVeterinario;
 import repositorio.RepFuncionario;
 import repositorio.RepositorioAnimal;
 
@@ -59,31 +60,31 @@ public class Main {
 	        ControlRepMedicamento medicamentos = new ControlRepMedicamento();
 	        ControlRepProduto produtos = new ControlRepProduto();
 	       // RepositorioVenda vendas = new RepositorioVenda();
-	        Rveterinario veterinarios = new Rveterinario();
+	       ControlRepVeterinario veterinarios = new ControlRepVeterinario();
 	        ControlRepEndereco enderecos = new ControlRepEndereco();
 	        ControlRepCliente clientes  = new ControlRepCliente();
 	        
-	        
-	      //  Endereco end = new Endereco();
+	        //String rua, String bairro, String cep, String estado, String numero, String pais
+	       Endereco end = new Endereco("nova jerusalem","Pau - Amarelo","50090690","PE","34","Brasil");
 	      //  enderecos.adicionar(end);
-	        endereco.setBairro("Pau - Amarelo");
-	        endereco.setRua("nova jerusalem");
-	        endereco.setCep("50090690");
-	        endereco.setEstado("PE");
-	        endereco.setNumero("34");
-	        endereco.setPais("Brasil");
+	       // end.setBairro("Pau - Amarelo");
+	        //end.setRua("nova jerusalem");
+	        //end.setCep("50090690");
+	        //end.setEstado("PE");
+	        //end.setNumero("34");
+	        //end.setPais("Brasil");
 	        
 	        enderecos.adicionar(end);
 	        
-	        //String cod, String nome, int qnt, double vc, double vv, String lote
+	        //(String cod, String nome, int qnt, double vc, double vv, String lote, LocalDate d)
 	        Medicamento medicamento = new Medicamento("666","Atenalou",29,1.59,1.59*0.3+1.59,"A1569", null);
 	        medicamentos.adicionar(medicamento);
 	        
 	      
 	        
 	        
+	        //(String nome,Endereco end,String cpf, String t,LocalDate dataNascimento)
 	        
-	        //String nome,Endereco end,String cpf, ArrayList<Animal> animal, String t
 	        Cliente cliente = new Cliente("Alisson",end,"cpf","999999999", null);
 			clientes.adicionar(cliente);
 			

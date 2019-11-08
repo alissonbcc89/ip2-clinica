@@ -8,7 +8,7 @@ public class Endereco {
 	private String estado;
 	private String numero;
 	private String pais;
-	private Pessoa pessoa;
+	//private Pessoa pessoa;
 
 	public Endereco(String rua, String bairro, String cep, String estado, String numero, String pais) {
 		
