@@ -18,6 +18,7 @@ public class Cliente extends Pessoa{
 		this.telefone = t;
 	}
 	
+	
 	public String getTelefone() {
 		return telefone;
 	}
@@ -26,23 +27,32 @@ public class Cliente extends Pessoa{
 		this.telefone = telefone;
 	}
 
-	@Override	
-	public boolean equals(Object obj)
-	{
-		boolean result = false;
-		
-		if(obj instanceof Cliente)
-		{
-			Cliente cliente = (Cliente)obj;
-			if(cliente.getCpf() != null && cliente.getNome() != null 
-					&& cliente.getNome().equals(this.getNome()))
-			{
-				result = true;
-			}			
-			
-		}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((telefone == null) ? 0 : telefone.hashCode());
 		return result;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cliente other = (Cliente) obj;
+		if (telefone == null) {
+			if (other.telefone != null)
+				return false;
+		} else if (!telefone.equals(other.telefone))
+			return false;
+		return true;
+	}
+	
+	
 
 
 

@@ -8,6 +8,7 @@ import java.util.Date;
 //Pessoa e todas as outras clases devem ser revisadas para atribuição de retorno necessario a cada caso.
 public abstract class Pessoa {
 	
+	
 	private String nome;
 	private Endereco endereco;
 	private String cpf;
@@ -22,6 +23,7 @@ public abstract class Pessoa {
 		
 	
 	}
+	
 	
 	public String getNome() 
 	{

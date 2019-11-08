@@ -129,7 +129,7 @@ public class Main {
 		
 		Veterinario vete = new Veterinario("alguem",null,"cpfver",null, "crmvtester", null);
 		
-		 veterinarios.alterara(vete);
+		 veterinarios.alterar(vete);
 
 		 
 		 System.out.println("Veterinario Busca Atual 2!\n" +veterinarios.buscar(veterinario));

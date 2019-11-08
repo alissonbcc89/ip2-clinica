@@ -1,18 +1,19 @@
 package entidade;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 public abstract class Produto {
 
-	private String cod;
+	private int cod;
 	private String nome;
 	private int qnt;
 	private double valorVenda;
 	private double valorCompra;
 	private LocalDate dataValidade;
+	Random random = new Random();
 	
-	
-	public Produto(String cod, String nome, int qnt, double vv, double vc, LocalDate dataValidade) {
+	public Produto(int cod, String nome, int qnt, double vv, double vc, LocalDate dataValidade) {
 	
 		this.cod = cod;
 		this.nome = nome;
@@ -21,12 +22,13 @@ public abstract class Produto {
 		this.valorCompra = vc;
 		this.dataValidade = dataValidade;
 	}
-	public String getCod() {
-		return cod;
+	
+	
+	public void setCod() {
+		
+		this.cod = random.nextInt();
 	}
-	public void setCod(String cod) {
-		this.cod = cod;
-	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -58,7 +60,5 @@ public abstract class Produto {
 	public void setDataValidade(LocalDate dataValidade) {
 		this.dataValidade = dataValidade;
 	}
-	
-	
 
 }

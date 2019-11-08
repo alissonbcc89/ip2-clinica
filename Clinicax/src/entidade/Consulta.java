@@ -3,6 +3,7 @@ package entidade;
 import java.text.DateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Random;
 
 public class Consulta {
 	
@@ -12,6 +13,7 @@ public class Consulta {
 	private LocalDate dataConsulta;
 	private double valor;
 	private Animal animal;
+	Random random = new Random();
 	
 	public Consulta(int id,Cliente cliente, LocalDate dateFormat, double valor, Animal animal ) {
 	
@@ -23,11 +25,15 @@ public class Consulta {
 		
 	}
 	public int getId() {
+		
+		
 		return id;
 	}
 	//metodo randomico
-	public void setId(int id) {
-		this.id = id;
+	public void setId() {
+		
+		
+		this.id = random.nextInt();
 	}
 	public Cliente getCliente() {
 		return cliente;

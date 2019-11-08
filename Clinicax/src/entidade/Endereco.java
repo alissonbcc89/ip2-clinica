@@ -2,15 +2,16 @@ package entidade;
 
 public class Endereco {
 	//implementar cod do cliente ou id do endereco?
+	private String codigo;
 	private String rua;
 	private String bairro;
 	private String cep;
 	private String estado;
 	private String numero;
 	private String pais;
-	//private Pessoa pessoa;
+	private Pessoa pessoa;
 
-	public Endereco(String rua, String bairro, String cep, String estado, String numero, String pais) {
+	public Endereco(String rua, String bairro, String cep, String estado, String numero, String pais, String codigo) {
 		
 		this.rua = rua;
 		this.bairro = bairro;
@@ -18,6 +19,7 @@ public class Endereco {
 		this.estado = estado;
 		this.numero = numero;
 		this.pais = pais;
+		this.codigo = codigo;
 		
 	}
 
@@ -67,6 +69,16 @@ public class Endereco {
 
 	public void setPais(String pais) {
 		this.pais = pais;
+	}
+	
+	public void setCodigo()
+	{
+		this.codigo = pessoa.getCpf();
+	}
+	
+	public String getId()
+	{
+		return this.codigo;
 	}
 
 	

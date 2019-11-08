@@ -6,59 +6,49 @@ public class ProdutoReal extends Produto{
 
 	private String descricao;
 	
-	public ProdutoReal(String cod, String nome, int qnt, double valorVenda, double valorCompra, LocalDate dataValidade,String desc)
+	public ProdutoReal(int cod, String nome, int qnt, double valorVenda, double valorCompra, LocalDate dataValidade,String desc)
 	{
 		super(cod,nome,qnt,valorVenda,valorCompra, dataValidade);
 		this.descricao = descricao;
 	}
-	
-	@Override
-	public int getQnt() {
-		// TODO Auto-generated method stub
-		return 0;
+
+	public String getDescricao() {
+		return descricao;
 	}
-	@Override
-	public void setQnt(int qnt) {
-		// TODO Auto-generated method stub
-		
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
+
 	@Override
-	public String getCod() {
-		// TODO Auto-generated method stub
-		return null;
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
+		return result;
 	}
+
 	@Override
-	public void setCod(String cod) {
-		// TODO Auto-generated method stub
-		}
-	@Override
-	public String getNome() {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ProdutoReal other = (ProdutoReal) obj;
+		if (descricao == null) {
+			if (other.descricao != null)
+				return false;
+		} else if (!descricao.equals(other.descricao))
+			return false;
+		return true;
 	}
+
 	@Override
-	public void setNome(String nome) {
-		// TODO Auto-generated method stub	
-	}
-	@Override
-	public double getValorVenda() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	@Override
-	public void setValorVenda(double valorVenda) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public double getValorCompra() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	@Override
-	public void setValorCompra(double valorCompra) {
-		// TODO Auto-generated method stub
-		
+	public String toString() {
+		return "ProdutoReal [descricao=" + descricao + "]";
 	}
 	
+		
 }
