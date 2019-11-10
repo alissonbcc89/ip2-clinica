@@ -6,7 +6,7 @@ import entidade.VendaTeste;
 public interface IVenda {
 	
 	
-	public void cancelarProduto(int quantidade, String codProduto);
+	public void cancelarProduto(int quantidade, int codProduto);
 	
 	public void adcVenda(Venda venda);
 	

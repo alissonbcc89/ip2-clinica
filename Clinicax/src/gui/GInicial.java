@@ -86,7 +86,10 @@ public class GInicial extends JFrame implements ActionListener{
 			cli = new GCadastroCliente();
 			cli.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			JOptionPane.showMessageDialog(null, "O botão ADICIONAR CLIENTE foi clicado");
+			//criar tela cliente;
+			GCliente Gcliente = new GCliente();
 			dispose();
+			
 			
 		}
 		if(e.getSource() == adcFuncionario)

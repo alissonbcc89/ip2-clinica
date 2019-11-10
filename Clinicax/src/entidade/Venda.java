@@ -3,6 +3,7 @@ package entidade;
 //import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 
 
 
@@ -15,7 +16,7 @@ import java.util.Date;
 
 public class Venda {
 	
-	
+	Random random;
 	private Date dataVenda;
 	private int cod;
 	
@@ -52,8 +53,9 @@ public class Venda {
 	public int getCod() {
 		return cod;
 	}
-	public void setCod(int cod) {
-		this.cod = cod;
+	public void setCod() 
+	{	
+		this.cod = random.nextInt();
 	}
 	public ArrayList<ProdutoReal> getProdReal() {
 		return prodReal;
