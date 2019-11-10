@@ -9,11 +9,11 @@ public interface IMedicamento {
 		
 		void remover(Medicamento med);
 			
-		void removeQnt(String cod,int n);
+		void removeQnt(int cod,int n);
 			
-		public Produto buscar(Medicamento med);
+		public Medicamento buscar(int codigo);
 			
-		public void adicionarQtn(String nome, int qnt);
+		public void adicionarQtn(int codigo, int qnt);
 		
 		
 	

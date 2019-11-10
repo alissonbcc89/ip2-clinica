@@ -31,7 +31,7 @@ public class RepositorioMedicamento implements IMedicamento{
 		// TODO Auto-generated method stub
 		
 		medicamentos.add(med);
-		System.out.println("\n Medicamento Inserido com sucesso");
+		//System.out.println("\n Medicamento Inserido com sucesso");
 		
 		
 	}
@@ -49,32 +49,23 @@ public class RepositorioMedicamento implements IMedicamento{
 	}
 
 	@Override
-	public void removeQnt(String cod, int n) {
+	public void removeQnt(int cod, int n) {
 		// TODO Auto-generated method stub
-		controlRepMed.removeQnt(cod,n);
+		controlRepMed.removerQnt(cod,n);
 	}
 
 	@Override
-	public Produto buscar(Medicamento med) {
+	public Medicamento buscar(int cod) {
 		// TODO Auto-generated method stub
 		
-		for(int i = 0; i < medicamentos.size(); i++)
-		{
-			if(medicamentos.get(i).getCod().equals(med.getCod()))
-			{
-				return medicamentos.get(i);
-			}
-		}
-		
-		
-		return null;
+			return controlRepMed.buscar(cod);
 	}
 
 	@Override
-	public void adicionarQtn(String nome, int qnt) {
+	public void adicionarQtn(int codigo, int qnt) {
 		// TODO Auto-generated method stub
 		
-		controlRepMed.adicionarQtn(nome, qnt);
+		controlRepMed.adicionarQtn(codigo,qnt);
 	}
 
 	}

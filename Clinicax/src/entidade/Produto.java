@@ -51,6 +51,16 @@ public abstract class Produto {
 	public double getValorCompra() {
 		return valorCompra;
 	}
+	public int getCod() {
+		return cod;
+	}
+
+
+	public void setCod(int cod) {
+		this.cod = cod;
+	}
+
+
 	public void setValorCompra(double valorCompra) {
 		this.valorCompra = valorCompra;
 	}

@@ -11,12 +11,18 @@ public class Medicamento extends Produto {
 
 	private String lote;
 	private LocalDate dataValidade;
-
-	public Medicamento(String cod, String nome, int qnt, double vc, double vv, String lote, LocalDate d) {
-		super(cod, nome, qnt, vc, vv,d);
-		this.lote = lote;
-	  
+	
+//int cod, String nome, int qnt, double vv, double vc, LocalDate dataValidade
+	
+	public Medicamento(int cod, String nome, int qnt, double vv, double vc, LocalDate dataValidade, String lote,LocalDate validade) {
+		// TODO Auto-generated constructor stub
+		super(cod, nome, qnt, vv, vc, dataValidade);
+		this.lote =lote;
+		this.dataValidade = validade;
+		
 	}
+	  
+	
 
 	/*public Date getDataValidade() {
 		return dataValidade;
@@ -31,6 +37,7 @@ public class Medicamento extends Produto {
 	public String getLote() {
 		return lote;
 	}
+
 
 	public void setLote(String lote) {
 		this.lote = lote;
@@ -79,9 +86,4 @@ public class Medicamento extends Produto {
 			return false;
 		return true;
 	}
-	
-	
-
-	
-	
 }

@@ -16,7 +16,7 @@ public class ControlRepProduto {
 		// TODO Auto-generated method stub
 		for(int i = 0; i < repProd.prodReal.size(); i ++)
 		{
-			if(repProd.prodReal.get(i).getCod().equals(prod.getCod()))
+			if(repProd.prodReal.get(i).getCod() == prod.getCod() )
 			{
 				
 				repProd.prodReal.remove(repProd.prodReal.get(i));
@@ -26,12 +26,12 @@ public class ControlRepProduto {
 	}
 	
 	
-	public void removeQnt(String cod, int n) {
+	public void removeQnt(int cod, int n) {
 		// TODO Auto-generated method stub
 	
 		for(int i = 0; i < repProd.prodReal.size(); i ++)
 		{
-			if(repProd.prodReal.get(i).getCod().equals(cod))
+			if(repProd.prodReal.get(i).getCod() == cod )
 			{
 				repProd.prodReal.get(i).setQnt(repProd.prodReal.get(i).getQnt() + n);
 			}
@@ -39,12 +39,12 @@ public class ControlRepProduto {
 		
 	}
 
-	public ProdutoReal buscar(ProdutoReal produto) {
+	public ProdutoReal buscar(int codigo) {
 		// TODO Auto-generated method stub
 		
 		for(int i = 0; i < repProd.prodReal.size(); i++)
 		{
-			if(repProd.prodReal.get(i).getCod().equals(produto.getCod()))
+			if(repProd.prodReal.get(i).getCod() == codigo)
 			{
 				return repProd.prodReal.get(i); 
 			}
@@ -57,7 +57,7 @@ public class ControlRepProduto {
 		
 		for(int i = 0; i < repProd.prodReal.size(); i++)
 		{
-			if(repProd.prodReal.get(i).getCod().equals(produto.getCod()) || repProd.prodReal.get(i).getNome().equals(produto.getNome()))
+			if(repProd.prodReal.get(i).getCod()== produto.getCod() || repProd.prodReal.get(i).getNome().equals(produto.getNome()))
 			{
 				repProd.prodReal.get(i).setQnt(produto.getQnt() + repProd.prodReal.get(i).getQnt());
 			}
@@ -66,34 +66,32 @@ public class ControlRepProduto {
 	}
 	
 	
-	public void alterar(ProdutoReal p)
+	public void alterar(ProdutoReal prod)
 	{
 		for(int i = 0; i < repProd.prodReal.size(); i++)
 		{
-			if(repProd.prodReal.get(i).getCod().equals(p.getCod()))
-					{
-					repProd.prodReal.set(i,p);
-					}
-			else
+			if(repProd.prodReal.get(i).getCod()== prod.getCod())
 			{
-				System.out.println("Não existe produto a ser alterado");
+				repProd.prodReal.set(i,prod);
 			}
 		}
 	}
 	
+		
 	
 	public void adicionar(ProdutoReal p)
 	{
 		for(int i = 0; i < repProd.prodReal.size(); i++)
 		{
-			if(repProd.prodReal.get(i).getCod()!=p.getCod())
+			if(repProd.prodReal.get(i).getCod() == p.getCod())
 			{
-				repProd.adicionar(p);
+				
+				this.adicionarQtn(p);
 				
 			}
 			else
 			{
-				this.adicionarQtn(p);
+				repProd.adicionar(p);
 			}
 		}
 		

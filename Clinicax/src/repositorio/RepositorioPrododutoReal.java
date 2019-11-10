@@ -46,10 +46,10 @@ public class RepositorioPrododutoReal implements IProdReal {
 	}
 
 	@Override
-	public void removeQnt(String cod, int n) {
+	public void removeQnt(int cod, int n) {
 		// TODO Auto-generated method stub
 		
-		controlRepProd.removeQnt(cod, n);
+		controlRepProd.removerQnt(cod, n);
 		
 	}
 
