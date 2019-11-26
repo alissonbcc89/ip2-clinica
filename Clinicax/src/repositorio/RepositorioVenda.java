@@ -32,18 +32,12 @@ public class RepositorioVenda implements IVenda{
 		
 	}
 
-	@Override
-	public void cancelarProduto(int quantidade, String codProduto) {
-		// TODO Auto-generated method stub
-		//terminando metodo
-		controlRepVenda,cancelarProduto(quantidade,codProduto);
-		
-	}
+	
 
 	@Override
 	public void adcVenda(Venda venda) {
-		
 		// TODO Auto-generated method stub
+		
 		vendas.add(venda);
 		
 	}
@@ -59,9 +53,20 @@ public class RepositorioVenda implements IVenda{
 	@Override
 	public Venda consultarVenda(int codigo) {
 		// TODO Auto-generated method stub
-
+	
+		Venda teste = null;
 		
-		return 	controlRepVendas.consultarVenda(codigo); 
+		for(int i = 0; i< vendas.size(); i++)
+		{
+			if(vendas.get(i).getCod() == codigo)
+			{
+				teste = vendas.get(i);
+			}
+		}
+		
+			return teste;
+		
 	}
+
 	
 }

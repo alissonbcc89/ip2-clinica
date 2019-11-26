@@ -9,6 +9,7 @@ import java.util.Date;
 public abstract class Pessoa {
 	
 	
+	public static final int Cliente = 0;
 	private String nome;
 	private Endereco endereco;
 	private String cpf;

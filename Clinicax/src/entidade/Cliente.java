@@ -1,12 +1,13 @@
 package entidade;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
 //Cliente não possui dependente, vericar problema mais tarde
 
-public class Cliente extends Pessoa{
+public class Cliente extends Pessoa implements Serializable{
 	
 	private String telefone;
 	
@@ -52,7 +53,10 @@ public class Cliente extends Pessoa{
 		return true;
 	}
 	
-	
+	public int getTipo()
+	{
+		return Pessoa.Cliente;
+	}
 
 
 

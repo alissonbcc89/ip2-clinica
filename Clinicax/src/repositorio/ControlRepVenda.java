@@ -27,38 +27,7 @@ public class ControlRepVenda implements IVenda {
 	//trabalhar nesse metodo quando voltar do jogo.
 	//não consigo enxegar a definição do metodo
 	
-	public void cancelarProduto(int quantidade, int codProduto) 
-	{
-		//Esse metodo só podera ser executado com a venda finalizada!!!
-		// TODO Auto-generated method stub
-		
-		int aux = repVenda.vendas.size();
-		
-		for(int i = 0; i < this.repVenda.vendas.size(); i++)
-			{
-			
-				if( this.repVenda.vendas.get(i).getCod() ==  codProduto)
-				{
-					this.repVenda.vendas.get(i).
-				}
-		
-			}
-		
-		System.out.println("Produto não existe");
-		
-		
-		/*
-		for(int i = 0; i< rep)
-		if(repVenda.vendas.get(aux).getProdReal().get(i).getCod().equals(codProduto))
-		{
-			
-		}*/
-		//Preciso pegar o tamanho do vetor produto que a venda recebe
-		//int i = repVenda.vendas.size();
-		//int j = repVenda.vendas.get(i).getProdReal().size();
-		//System.out.println(j);
-	}
-
+	
 	
 	
 
