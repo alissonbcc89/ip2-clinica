@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 
 import entidade.Animal;
 import entidade.Cliente;
+import repositorio.ControlRepAnimal;
 import repositorio.RepositorioAnimal;
 import repositorio.RepositorioCliente;
 
@@ -34,9 +35,11 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 	
 	
 		
-	RepositorioAnimal repAnimal = new RepositorioAnimal();
+	ControlRepAnimal repAnimal = new ControlRepAnimal();
 	
-	RepositorioCliente repCli = new RepositorioCliente();
+	//RepositorioCliente repCli = new RepositorioCliente();
+	
+	Cliente cliente;
 	
 	public GCadastroAnimal()
 	{
@@ -48,10 +51,14 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 		container.add(new JLabel("CPF do Cliente"));
 		cpf = new JTextField(20);
 		container.add(cpf);
+		String teste = (cpf.getText());
+		cliente.setCpf(teste);
 		
 		container.add(new JLabel("Nome"));		
 		nome = new JTextField(30);
 		container.add(nome);
+		String n = (nome.getText());
+		animal.setNome(n);
 		
 		container.add( new JLabel("Raça"));
 		raca = new JTextField();
@@ -65,7 +72,7 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 		especie  = new JTextField();
 		container.add(especie);
 		
-		repCli = new RepositorioCliente();
+		//repCli = new RepositorioCliente();
 		
 		setSize(425,100);
 		setVisible(true);
@@ -80,34 +87,9 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 		//cliente possui arraylist animal
 		
 		if(e.getSource() ==  ok)
-		{
-			String aux = cpf.getText();
-			boolean b = repCli.buscarCpf(aux);
-			
+		{		
+		}
 				
-			
-			if(b == true)
-			{
-				//public String n = nome.getText();
-				//animal.setNome(n);
-				
-				Cliente cliente = repCli.pesquisarCliente(aux);//nome,raca,idade,especie
-								
-					animal =new Animal(nome.getText(),raca.getText(),idade.getText(),especie.getText(),cliente);
-					repAnimal.adicionar(animal);
-				
-			}
-			if(b == false)
-			{
-				//apaga os dados e continua na tela de cadastro do cliente ou pode voltar para a tela inicial 
-			}
-			
-		
-			
-			//repCli.getClass().getCliente().size();//todo animal recebe cliente e todo cliente recebe um ou mais animais, (adicionar animal alhei pode causar conflito de algoritimos ??)
-			
-			
-		}		
 		if(e.getSource() == cancela)
 		{
 			cadastro = new GCadastro();

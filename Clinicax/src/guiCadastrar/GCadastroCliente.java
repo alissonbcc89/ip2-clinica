@@ -21,7 +21,8 @@ import repositorio.RepositorioCliente;
 
 public class GCadastroCliente extends JFrame implements ActionListener{
 	
-	RepositorioCliente clientes;
+	//RepositorioCliente clientes;
+
 	
 	JTextField nome, cpf, rua,bairro,cep,estado,numero,pais,nomea,idade,raca,especie;
 	
@@ -154,12 +155,14 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 		if(e.getSource() == adicionar)
 		{		
 			//devo verificar construtor
-			
-			endereco = new Endereco(rua.getText(),bairro.getText(),cep.getText(),estado.getText(),numero.getText(),pais.getText(), title);
+			//String rua, String bairro, String cep, String estado, String numero, String pais, String codigo
+			endereco = new Endereco(rua.getText(),bairro.getText(),cep.getText(),estado.getText(),numero.getText(),pais.getText(),cpf.getText());
 			animal= new Animal(nome.getText(),raca.getText(),idade.getText(),especie.getText(), cliente, null);
 			cliente = new Cliente(nome.getText(),endereco,animal,cpf.getText());
-			ControlRepCliente controlRepCliente;
-			controlRepCliente.adicionar(cliente);
+			
+			repclientes.adicionar(cliente);
+			
+			
 			gCadastro = new GCadastro();
 			dispose();			
 		}

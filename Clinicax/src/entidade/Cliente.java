@@ -20,6 +20,11 @@ public class Cliente extends Pessoa implements Serializable{
 	}
 	
 	
+	public Cliente(String text, Endereco endereco, Animal animal, String text2) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String getTelefone() {
 		return telefone;
 	}
