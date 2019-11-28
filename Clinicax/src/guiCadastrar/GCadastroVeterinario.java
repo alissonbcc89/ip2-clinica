@@ -1,16 +1,126 @@
 package guiCadastrar;
 
 import javax.swing.*;
+
+import entidade.Endereco;
+import entidade.Veterinario;
+import main.GMain;
+import repositorio.ControlRepVeterinario;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 
 public class GCadastroVeterinario extends JFrame implements ActionListener {
 
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+	ControlRepVeterinario controlRepVeterinario;
+	
+	//String nome, Endereco enderco,String cpf,LocalDate dataNascimento, String crmv,LocalDate dataAdmissao
+	Veterinario veterinario;
+	
+	//String rua, String bairro, String cep, String estado, String numero, String pais, String codigo
+	Endereco endereco;
+	
+	JTextField nome,cpf,dataNascimento,crmv,dataAdmissao, rua,bairro,cep,estado,numero,pais;
+	
+	JButton ok,voltar;
+	
+	public GCadastroVeterinario()
+	{
+		super("Cadastro Veterinario");
 		
+		Container container = getContentPane();
+		
+		container.setLayout(new GridLayout(23,2));
+		
+		container.add(new JLabel ("Nome"));
+		nome =  new JTextField(30);
+		container.add(nome);
+		String teste = (nome.getText());
+		veterinario.setNome(teste);
+		
+		container.add(new JLabel ("CPF:"));
+		cpf = new JTextField(16);
+		container.add(cpf);
+		String aux = cpf.getText();
+		veterinario.setCpf(aux);
+		
+		container.add(new JLabel("Data nascimento"));
+		dataNascimento = new JTextField(8);
+		container.add(dataNascimento);
+		LocalDate certa = LocalDate.parse(dataNascimento.getText());
+		veterinario.setDataNascimento(certa);
+		
+		container.add(new JLabel("CRMV"));
+		crmv = new JTextField(16);
+		container.add(crmv);
+		String c = crmv.getText();
+		veterinario.setCrmv(c);
+		
+		
+		LocalDate cert = LocalDate.now();
+		veterinario.setDataAdmissao(cert);
+		
+		//rua,bairro,cep,estado,numero,pais;
+		
+		container.add(new JLabel("Rua:"));
+		rua = new JTextField(16);
+		container.add(rua);
+		String r = rua.getText();
+		endereco.setRua(r);
+		
+		container.add(new JLabel("Bairro:"));
+		bairro = new JTextField(16);
+		container.add(bairro);
+		String b = bairro.getText();
+		endereco.setBairro(b);
+		
+		container.add(new JLabel("Cep:"));
+		cep = new JTextField(16);
+		container.add(cep);
+		String ce = cep.getText();
+		endereco.setCep(ce);
+		
+		container.add(new JLabel("Estado:"));
+		estado = new JTextField(16);
+		container.add(estado);
+		String este = estado.getText();
+		endereco.setEstado(este);
+		
+		container.add(new JLabel("Numero:"));
+		numero = new JTextField(5);
+		container.add(numero);
+		String num = numero.getText();
+		endereco.setNumero(num);
+		
+		container.add(new JLabel("Pais:"));
+		pais = new JTextField(16);
+		container.add(pais);
+		String pa = pais.getText();
+		endereco.setPais(pa);
+		
+		veterinario.setEndereco(endereco);
+		
+	}
+	
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource() == ok)
+		{	
+			
+			controlRepVeterinario.adicionar(veterinario);
+			GMain gMain = new GMain();
+			dispose();
+		}
+		if(e.getSource()== voltar)
+		{
+			GMain gMain = new GMain();
+			dispose();
+		}
 	}
 
 }
