@@ -96,6 +96,27 @@ public class GCadastroEndereco extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		if(e.getSource() == adicionar)
+		{
+			
+			controlRepEndereco.adicionar(endereco);
+			
+			GCadastro gCadastro = new GCadastro();
+			
+			dispose();
+		}
+		if(e.getSource() == cancelar)
+		{
+			GCadastroEndereco gCadastroEndereco = new GCadastroEndereco();
+			dispose();
+		}
+		
+		if(e.getSource() == voltar)
+		{
+			GCadastro gCadastro = new GCadastro();
+			dispose();
+		}
+		
 	}
 
 }
