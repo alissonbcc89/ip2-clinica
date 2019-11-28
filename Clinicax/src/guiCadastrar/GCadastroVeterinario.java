@@ -102,6 +102,19 @@ public class GCadastroVeterinario extends JFrame implements ActionListener {
 		
 		veterinario.setEndereco(endereco);
 		
+		
+		ok = new JButton("OK");
+		container.add(ok);
+		ok.addActionListener(this);
+		
+		
+		voltar = new JButton("Voltar");
+		container.add(voltar);
+		voltar.addActionListener(this);
+		
+		 setSize(425,100);
+		 setVisible(true);		
+
 	}
 	
 	
