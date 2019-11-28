@@ -4,6 +4,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -31,15 +32,16 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 	
 	JButton ok,cancela;
 	
+	//String nome, String raca, String idade,String especie, Cliente c, LocalDate d
 	Animal animal;
 	
 	
 		
-	ControlRepAnimal repAnimal = new ControlRepAnimal();
+	//ControlRepAnimal repAnimal = new ControlRepAnimal();
 	
-	//RepositorioCliente repCli = new RepositorioCliente();
+	RepositorioCliente repCli = new RepositorioCliente();
 	
-	Cliente cliente;
+	//Cliente cliente;
 	
 	public GCadastroAnimal()
 	{
@@ -48,11 +50,11 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 		
 		container.setLayout(new GridLayout(23,2));
 		
-		container.add(new JLabel("CPF do Cliente"));
+		/*container.add(new JLabel("CPF do Cliente"));
 		cpf = new JTextField(20);
 		container.add(cpf);
 		String teste = (cpf.getText());
-		cliente.setCpf(teste);
+		cliente.setCpf(teste);*/
 		
 		container.add(new JLabel("Nome"));		
 		nome = new JTextField(30);
@@ -62,15 +64,21 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 		
 		container.add( new JLabel("Raça"));
 		raca = new JTextField();
-		container.add(raca);		
+		container.add(raca);
+		String r = (raca.getText());
+		animal.setRaca(r);
 		
 		container.add(new JLabel("Idade"));
 		idade = new JTextField();
 		container.add(idade);
+		String i = idade.getText();
+ 		animal.setIdade(i);
 		
 		container.add(new JLabel("Especie"));
 		especie  = new JTextField();
 		container.add(especie);
+		String e = especie.getText();
+		animal.setEspecie(e);
 		
 		//repCli = new RepositorioCliente();
 		
@@ -87,7 +95,8 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 		//cliente possui arraylist animal
 		
 		if(e.getSource() ==  ok)
-		{		
+		{
+			repAnimal.adicionar(animal);
 		}
 				
 		if(e.getSource() == cancela)

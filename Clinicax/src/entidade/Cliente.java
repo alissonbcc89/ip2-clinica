@@ -7,7 +7,7 @@ import java.util.Date;
 
 //Cliente não possui dependente, vericar problema mais tarde
 
-public class Cliente extends Pessoa implements Serializable{
+public class Cliente extends Pessoa {
 	
 	private String telefone;
 	
@@ -20,9 +20,6 @@ public class Cliente extends Pessoa implements Serializable{
 	}
 	
 	
-	public Cliente(String text, Endereco endereco, Animal animal, String text2) {
-		// TODO Auto-generated constructor stub
-	}
 
 
 	public String getTelefone() {

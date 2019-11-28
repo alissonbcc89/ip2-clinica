@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 
 import javax.print.attribute.standard.NumberOfDocuments;
 import javax.swing.JButton;
@@ -158,7 +159,8 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 			//String rua, String bairro, String cep, String estado, String numero, String pais, String codigo
 			endereco = new Endereco(rua.getText(),bairro.getText(),cep.getText(),estado.getText(),numero.getText(),pais.getText(),cpf.getText());
 			animal= new Animal(nome.getText(),raca.getText(),idade.getText(),especie.getText(), cliente, null);
-			cliente = new Cliente(nome.getText(),endereco,animal,cpf.getText());
+			//String nome,Endereco end,String cpf, String t,LocalDate dataNascimento
+			cliente = new Cliente(nome.getText(),endereco,cpf.getText(),"9999999",null);
 			
 			repclientes.adicionar(cliente);
 			

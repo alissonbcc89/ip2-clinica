@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import guiCadastrar.GCadastro;
 import guiConsultar.GConsulta;
 import guiEditar.GAtualizar;
+import guiPesquisar.GPesquisa;
 import guiRemover.GRemover;
 
 public class GTelaPrincipal extends JFrame implements ActionListener{
@@ -21,7 +22,7 @@ public class GTelaPrincipal extends JFrame implements ActionListener{
 	GRemover rem;
 	GAtualizar atual;
 	GVenda ven;
-	GConsulta con;
+	//GConsulta con;
 	
 	
 	JButton cadastrar,pesquisar,remover,atualizar,venda,consulta;
