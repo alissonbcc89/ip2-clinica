@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 
 public class GCadastroDependente extends JFrame implements ActionListener{
 
-	
+	//momentaneamente não devo montar dependente
 	
 	
 	@Override

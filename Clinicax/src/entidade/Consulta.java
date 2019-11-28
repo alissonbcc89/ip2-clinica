@@ -15,10 +15,10 @@ public class Consulta {
 	private Animal animal;
 	Random random = new Random();
 	
-	public Consulta(int id,Cliente cliente, LocalDate dateFormat, double valor, Animal animal ) {
+	public Consulta(int id, LocalDate dateFormat, double valor, Animal animal ) {
 	
 		this.id = id;
-		this.cliente = cliente;
+		//this.cliente = cliente;
 		this.dataConsulta = dateFormat;
 		this.valor = valor;
 		this.animal = animal;
@@ -35,13 +35,8 @@ public class Consulta {
 		
 		this.id = random.nextInt();
 	}
-	public Cliente getCliente() {
-		return cliente;
-	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-	public LocalDate getDateFormat() {
+	
+		public LocalDate getDateFormat() {
 
 		return dataConsulta;
 	}
