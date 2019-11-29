@@ -1,4 +1,4 @@
-package guiEditar;
+package guiAtualizar;
 
 public class GAtualizarDependente {
 

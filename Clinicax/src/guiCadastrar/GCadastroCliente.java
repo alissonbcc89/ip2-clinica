@@ -20,8 +20,15 @@ import entidade.Pessoa;
 import repositorio.ControlRepCliente;
 import repositorio.RepositorioCliente;
 
+
 public class GCadastroCliente extends JFrame implements ActionListener{
 	
+	
+	/**
+	 * 
+	 */
+	
+
 	//RepositorioCliente clientes;
 
 	
@@ -150,10 +157,10 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 
 	
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent a) {
 		// TODO Auto-generated method stub
 		
-		if(e.getSource() == adicionar)
+		if(a.getSource() == adicionar)
 		{		
 			//devo verificar construtor
 			//String rua, String bairro, String cep, String estado, String numero, String pais, String codigo
@@ -168,7 +175,7 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 			gCadastro = new GCadastro();
 			dispose();			
 		}
-		if(e.getSource() == cancelar)
+		if(a.getSource() == cancelar)
 		{
 			 for (int i=0; i < getContentPane().getComponentCount(); i++) 
 			 {
@@ -186,7 +193,7 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 			 }
 		}
 		
-		if(e.getSource() == voltar)
+		if(a.getSource() == voltar)
 		{	
 			gCadastro = new GCadastro();
 			dispose();

@@ -9,16 +9,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import guiAtualizar.GAtualizar;
 import guiCadastrar.GCadastro;
 import guiConsultar.GConsulta;
-import guiEditar.GAtualizar;
-import guiPesquisar.GPesquisa;
 import guiRemover.GRemover;
+
 
 public class GTelaPrincipal extends JFrame implements ActionListener{
 
 	GCadastro cad;
-	GPesquisa pesq;
+	GConsulta pesq;
 	GRemover rem;
 	GAtualizar atual;
 	GVenda ven;
@@ -79,7 +79,7 @@ public class GTelaPrincipal extends JFrame implements ActionListener{
 		}
 		if(e.getSource() == pesquisar)
 		{
-			pesq = new GPesquisa();
+			pesq = new GConsulta();
 			//pesq.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			JOptionPane.showMessageDialog(null, "O botão Buscar foi acionado");
 			dispose();
@@ -103,8 +103,7 @@ public class GTelaPrincipal extends JFrame implements ActionListener{
 			dispose();
 		
 		}
-		
-		
+			
 		
 		if(e.getSource() ==  venda)
 		{
@@ -113,23 +112,9 @@ public class GTelaPrincipal extends JFrame implements ActionListener{
 			dispose();
 		}
 		
-		if(e.getSource() == consulta)
-		{
-			con = new GConsulta();
-			JOptionPane.showMessageDialog(null,"O Botão efetuar Consulta foi adicionado");
-			dispose();
-			
-		}
-			
 		
 		
 	}
 	
-	
-
-
-
-
-
 
 }

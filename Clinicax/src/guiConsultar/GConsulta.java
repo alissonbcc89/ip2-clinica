@@ -7,6 +7,8 @@ import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import gui.GTelaPrincipal;
+
 
 public class GConsulta extends JFrame implements ActionListener{
 	
@@ -111,10 +113,15 @@ public class GConsulta extends JFrame implements ActionListener{
 			GConsultaProduto gConsultaProduto = new GConsultaProduto();
 			dispose();
 		}
-		if(e.getSource()== consultaVeterinario)
+		if(e.getSource() == consultaVeterinario)
 		{
 			//GConsultaVeterinario gConsultaVeterinario;
 			  GConsultaVeterinario gConsultaVeterinario =  new GConsultaVeterinario();
+			dispose();
+		}
+		if(e.getSource() == voltar)
+		{
+			GTelaPrincipal gTelaPrincipal = new GTelaPrincipal();
 			dispose();
 		}
 	}

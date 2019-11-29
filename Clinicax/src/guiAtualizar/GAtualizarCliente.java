@@ -1,4 +1,4 @@
-package guiEditar;
+package guiAtualizar;
 
 import java.awt.Container;
 import java.awt.event.ActionEvent;
