@@ -39,7 +39,7 @@ public class GCadastroMedicamento extends JFrame implements ActionListener {
 		nome =  new JTextField(30);
 		container.add(nome);
 		String teste = (nome.getText());
-		medicamento.setNome(teste);
+		//medicamento.setNome(teste);
 		
 		container.add(new JLabel("Quantidade"));
 		quantidade  =  new JTextField(30);

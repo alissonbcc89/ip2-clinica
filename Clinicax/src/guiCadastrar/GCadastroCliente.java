@@ -145,9 +145,9 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 		container.add(adicionar);
 		adicionar.addActionListener(this);
 		
-		cancelar = new JButton("Cancelar");
+		/*cancelar = new JButton("Cancelar");
 		container.add(cancelar);
-		cancelar.addActionListener(this);
+		cancelar.addActionListener(this);*/
 		
 		voltar = new JButton("Voltar");
 		container.add(voltar);
@@ -182,13 +182,14 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 			//String nome,Endereco end,String cpf, String t,LocalDate dataNascimento
 			cliente = new Cliente(nome.getText(),endereco,cpf.getText(),"9999999",null);
 			
+			//preciso ao mesmo tempo adicionar endereco e animal ao seu ControlRepositorioRespequitivo.
 			repclientes.adicionar(cliente);
 			
 			
 			gCadastro = new GCadastro();
 			dispose();			
 		}
-		if(a.getSource() == cancelar)
+/*		if(a.getSource() == cancelar)
 		{
 			 for (int i=0; i < getContentPane().getComponentCount(); i++) 
 			 {
@@ -204,7 +205,7 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 				//System.out.println("apagando campo " + i);		
 				}
 			 }
-		}
+		}*/
 		
 		if(a.getSource() == voltar)
 		{	

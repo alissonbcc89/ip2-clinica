@@ -24,6 +24,9 @@ public class GCadastroConsulta extends JFrame implements ActionListener{
 	
 	Consulta consulta;
 	
+	Double num;
+	LocalDate agora;
+	String teste1;
 	
 	
 	ControlRepConsulta controlRepConsulta;
@@ -34,7 +37,7 @@ public class GCadastroConsulta extends JFrame implements ActionListener{
 	
 	
 	
-	JTextField valor,nome,raca,idade,especie;
+	JTextField valor,nome,raca,idade,especie,localValidade, cpf;
 	JButton ok, voltar;
 	
 	public GCadastroConsulta()
@@ -45,11 +48,19 @@ public class GCadastroConsulta extends JFrame implements ActionListener{
 		
 		container.setLayout(new GridLayout(23,2));
 		
+		container.add(new JLabel ("CPF cliente"));
+		cpf =  new JTextField(30);
+		container.add(cpf);
+		
+		
+		
 		container.add(new JLabel ("Nome"));
 		nome =  new JTextField(30);
 		container.add(nome);
 		String teste = (nome.getText());
 	//	animal.setNome(teste);
+		
+		
 		
 		container.add(new JLabel ("Raca"));
 		raca =  new JTextField(30);
@@ -69,11 +80,17 @@ public class GCadastroConsulta extends JFrame implements ActionListener{
 		String e = (especie.getText());
 		//animal.setEspecie(e);
 		
+		container.add(new JLabel("Data Validade:"));
+		localValidade = new JTextField(8);
+		container.add(localValidade);
+		
+		
+		
 		
 		container.add(new JLabel ("Valor"));
 		valor =  new JTextField(30);
 		container.add(valor);
-		Double num = Double.parseDouble( valor.getText());
+		
 	//	consulta.setValor(num);
 		
 		
@@ -97,6 +114,12 @@ public class GCadastroConsulta extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		if(e.getSource() == ok)
 		{
+			String teste1 = (cpf.getText());
+			LocalDate agora = LocalDate.parse(localValidade.getText());
+			Double num = Double.parseDouble( valor.getText());
+			Animal animal = new Animal(title, title, title, title, title);
+			//int id, LocalDate dateFormat, double valor, Animal animal,String cpf
+			consulta = new Consulta(consulta.setId(),agora,num,animal,teste1);
 			controlRepConsulta.adicionar(consulta);
 			//devo chamar a primeira tela sempre que efetuar entrada.
 		}

@@ -9,19 +9,20 @@ public class Consulta {
 	
 	
 	private int id;
-	private Cliente cliente;
+	private String cpf;
 	private LocalDate dataConsulta;
 	private double valor;
 	private Animal animal;
 	Random random = new Random();
 	
-	public Consulta(int id, LocalDate dateFormat, double valor, Animal animal ) {
+	public Consulta(int id, LocalDate dateFormat, double valor, Animal animal,String cpf) {
 	
 		this.id = id;
 		//this.cliente = cliente;
 		this.dataConsulta = dateFormat;
 		this.valor = valor;
 		this.animal = animal;
+		this.cpf = cpf;
 		
 	}
 	public int getId() {
@@ -62,11 +63,20 @@ public class Consulta {
 	public void setAnimal(Animal animal) {
 		this.animal = animal;
 	}
+	
+	
+	
 
 
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	@Override
 	public String toString() {
-		return "Consulta [id=" + id + ", cliente=" + cliente + ", dateFormat=" + dataConsulta + ", valor=" + valor
+		return "Consulta [id=" + id + ", dateFormat=" + dataConsulta + ", valor=" + valor
 				+ ", animal=" + animal + "]";
 	}
 	@Override
@@ -74,7 +84,6 @@ public class Consulta {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((animal == null) ? 0 : animal.hashCode());
-		result = prime * result + ((cliente == null) ? 0 : cliente.hashCode());
 		result = prime * result + ((dataConsulta == null) ? 0 : dataConsulta.hashCode());
 		result = prime * result + id;
 		long temp;
@@ -95,11 +104,6 @@ public class Consulta {
 			if (other.animal != null)
 				return false;
 		} else if (!animal.equals(other.animal))
-			return false;
-		if (cliente == null) {
-			if (other.cliente != null)
-				return false;
-		} else if (!cliente.equals(other.cliente))
 			return false;
 		if (dataConsulta == null) {
 			if (other.dataConsulta != null)
