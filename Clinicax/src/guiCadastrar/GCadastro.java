@@ -44,7 +44,7 @@ public class GCadastro extends JFrame implements ActionListener {
 		
 		Container container =  getContentPane();
 		
-		container.setLayout(new GridLayout(23,2));
+		container.setLayout(new GridLayout(23,1));
 		
 		cadastroAnimal = new JButton("Cadastro Animal");
 		container.add(cadastroAnimal);

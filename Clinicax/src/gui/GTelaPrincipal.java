@@ -10,18 +10,21 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import guiAtualizar.GAtualizar;
+import guiCadastrar.GC;
 import guiCadastrar.GCadastro;
+import guiCadastrar.GCadastroCliente;
 import guiConsultar.GConsulta;
 import guiRemover.GRemover;
 
 
 public class GTelaPrincipal extends JFrame implements ActionListener{
 
-	GCadastro cad;
+	GC cad;
 	GConsulta pesq;
 	GRemover rem;
 	GAtualizar atual;
 	GVenda ven;
+	GCadastroCliente gCd;
 	//GConsulta con;
 	
 	
@@ -73,7 +76,8 @@ public class GTelaPrincipal extends JFrame implements ActionListener{
 		
 		if(e.getSource() == cadastrar)
 		{
-			cad = new GCadastro();		
+		//	gCd = new GCadastroCliente();
+			cad = new GC();		
 		//	JOptionPane.showMessageDialog(null, "O botão Cadastro foi acionado");
 			dispose();
 		}
