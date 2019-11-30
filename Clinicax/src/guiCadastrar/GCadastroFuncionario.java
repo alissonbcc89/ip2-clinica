@@ -4,6 +4,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,10 +17,13 @@ import repositorio.ControlRepFuncionario;
 
 public class GCadastroFuncionario extends JFrame implements ActionListener{
 
+	//String nome, Endereco end,String cpf,LocalDate dataNascimento, String ctps,LocalDate dataAdmissao
 	
-	JTextField nome, cpf, rua,bairro,cep,estado,numero,pais,nomea,idade,raca,especie;
+	JTextField nome, cpf, rua,bairro,cep,estado,numero,pais,dataNascimento,ctps,dataAdmissao;
 	
 	JButton adicionar, cancelar, voltar;
+	
+	LocalDate agora, agora1;
 	
 	Funcionario funcionario;
 	Endereco endereco;
@@ -43,13 +47,24 @@ public class GCadastroFuncionario extends JFrame implements ActionListener{
 		String teste = (nome.getText());
 //		funcionario.setNome(teste);
 		
-		
-		
 		container.add(new JLabel ("CPF:"));
 		cpf = new JTextField(16);
 		container.add(cpf);
 		String aux = cpf.getText();
 	//	funcionario.setCpf(aux);
+		
+		//datasNascimento,ctps,dataAdmissao
+		
+		container.add(new JLabel("Data Nascimento:"));
+		dataNascimento = new JTextField(10);
+		container.add(dataNascimento);
+		LocalDate agora1 = LocalDate.parse(dataNascimento.getText());
+		
+		container.add(new JLabel("Carteira Profissional") );
+		ctps = new JTextField(10);
+		container.add(ctps);
+		
+		LocalDate agora = LocalDate.now();
 		
 		container.add(new JLabel("Rua"));
 		rua = new JTextField(20);
@@ -117,7 +132,8 @@ public class GCadastroFuncionario extends JFrame implements ActionListener{
 		if(e.getSource() == adicionar)
 		{
 			endereco = new Endereco(rua.getText(),bairro.getText(),cep.getText(),estado.getText(),numero.getText(),pais.getText(),cpf.getText());
-			funcionario = new Funcionario(nome.getText(),endereco,cpf.getText(), null, getTitle(), null);
+			//String nome, Endereco end,String cpf,LocalDate dataNascimento, String ctps,LocalDate dataAdmissao
+			funcionario = new Funcionario(nome.getText(),endereco,cpf.getText(),agora1, ctps.getText(), agora);
 			controlRepFuncionario.adicionar(funcionario);
 			
 			gCadastro = new GCadastro();

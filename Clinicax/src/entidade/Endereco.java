@@ -2,6 +2,7 @@ package entidade;
 
 public class Endereco {
 	//implementar cod do cliente ou id do endereco?
+	
 	private String codigo;
 	private String rua;
 	private String bairro;
@@ -9,7 +10,7 @@ public class Endereco {
 	private String estado;
 	private String numero;
 	private String pais;
-	private Pessoa pessoa;
+	//private Pessoa pessoa;
 
 	public Endereco(String rua, String bairro, String cep, String estado, String numero, String pais, String codigo) {
 		
@@ -71,9 +72,9 @@ public class Endereco {
 		this.pais = pais;
 	}
 	
-	public void setCodigo()
+	public void setCodigo(String cpf)
 	{
-		this.codigo = pessoa.getCpf();
+		this.codigo = cpf;
 	}
 	
 	public String getId()

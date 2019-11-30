@@ -117,9 +117,11 @@ public class GCadastroConsulta extends JFrame implements ActionListener{
 			String teste1 = (cpf.getText());
 			LocalDate agora = LocalDate.parse(localValidade.getText());
 			Double num = Double.parseDouble( valor.getText());
-			Animal animal = new Animal(title, title, title, title, title);
+			//String nome, String raca, String idade,String especie, String codCliente
+			
+			Animal animal = new Animal(nome.getText(), raca.getText(), idade.getText() , especie.getText(), cpf.getText());
 			//int id, LocalDate dateFormat, double valor, Animal animal,String cpf
-			consulta = new Consulta(consulta.setId(),agora,num,animal,teste1);
+			consulta = new Consulta(consulta.getId(),agora,num,animal,teste1);
 			controlRepConsulta.adicionar(consulta);
 			//devo chamar a primeira tela sempre que efetuar entrada.
 		}

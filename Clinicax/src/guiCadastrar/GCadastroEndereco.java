@@ -32,6 +32,9 @@ public class GCadastroEndereco extends JFrame implements ActionListener{
 		
 		container.setLayout(new GridLayout(23,2));
 		
+		container.add(new JLabel("Digite o cpf do usuario"));
+		cpf = new JTextField(20);
+		container.add(cpf);
 		
 		container.add(new JLabel("Rua"));
 		rua = new JTextField(20);
@@ -98,6 +101,9 @@ public class GCadastroEndereco extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		if(e.getSource() == adicionar)
 		{
+			//String rua, String bairro, String cep, String estado, String numero, String pais, String codigo
+			
+			endereco = new Endereco(rua.getText(),bairro.getText(),cep.getText(),estado.getText(),numero.getText(),pais.getText(),cpf.getText());
 			
 			controlRepEndereco.adicionar(endereco);
 			
