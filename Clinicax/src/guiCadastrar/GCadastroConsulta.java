@@ -49,32 +49,32 @@ public class GCadastroConsulta extends JFrame implements ActionListener{
 		nome =  new JTextField(30);
 		container.add(nome);
 		String teste = (nome.getText());
-		animal.setNome(teste);
+	//	animal.setNome(teste);
 		
 		container.add(new JLabel ("Raca"));
 		raca =  new JTextField(30);
 		container.add(raca);
 		String r = (raca.getText());
-		animal.setRaca(r);
+		//animal.setRaca(r);
 		
 		container.add(new JLabel ("Idade"));
 		idade =  new JTextField(30);
 		container.add(idade);
 		String i = (nome.getText());
-		animal.setIdade(i);
+		//animal.setIdade(i);
 		
 		container.add(new JLabel ("Especie"));
 		especie =  new JTextField(30);
 		container.add(especie);
 		String e = (especie.getText());
-		animal.setEspecie(e);
+		//animal.setEspecie(e);
 		
 		
 		container.add(new JLabel ("Valor"));
 		valor =  new JTextField(30);
 		container.add(valor);
 		Double num = Double.parseDouble( valor.getText());
-		consulta.setValor(num);
+	//	consulta.setValor(num);
 		
 		
 		

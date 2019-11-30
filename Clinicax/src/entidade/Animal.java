@@ -12,26 +12,26 @@ public class Animal {
 	private String raca;
 	private String idade;
 	private String especie;
-	private Cliente cliente;
-	private LocalDate dataNascimento;
+	private String codCliente;
+	
 	Random random = new Random();
 	
 	
-	public Animal(String nome, String raca, String idade,String especie, Cliente c, LocalDate d)
+	public Animal(String nome, String raca, String idade,String especie, String codCliente)
 	{
 		
 		this.nome = nome;
 		this.raca = raca;
 		this.idade = idade;
 		this.especie = especie;
-		this.cliente = c;
-		this.dataNascimento = d;
+		this.codCliente = codCliente;
+		
 	}
-	public Cliente getCliente() {
-		return cliente;
+	public String getCodCliente() {
+		return codCliente;
 	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setCodCliente(String cod) {
+		this.codCliente = cod;
 	}
 	public int getId() {
 		return id;
@@ -41,10 +41,6 @@ public class Animal {
 		this.id = random.nextInt() ;
 	}
 	
-	public void setDataNascimento(LocalDate dataNascimento) {
-	
-		this.dataNascimento = dataNascimento;
-	}
 	public String getEspecie() {
 		
 		return especie;
@@ -72,28 +68,22 @@ public class Animal {
 	public void setIdade(String idade) {
 		this.idade = idade;
 	}
-	public void setDataBascimento( LocalDate d )
-	{
-		this.dataNascimento = d;
-	}
-	public LocalDate getDataNascimento(){
-		return dataNascimento;
-	}
+	
 	@Override
 	public String toString() {
-		return "\n Animal\n Codigo:"+id +"\n nome:" + nome + "\n raca:" + raca + "\n idade:" + idade + "\n especie:" + especie + "\n Pertence:"+cliente.getNome();
+		return "\n Animal\n Codigo:"+id +"\n nome:" + nome + "\n raca:" + raca + "\n idade:" + idade + "\n especie:" + especie + "\n Pertence:"+codCliente;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((cliente == null) ? 0 : cliente.hashCode());
-		result = prime * result + ((dataNascimento == null) ? 0 : dataNascimento.hashCode());
+		result = prime * result + ((codCliente == null) ? 0 : codCliente.hashCode());
 		result = prime * result + ((especie == null) ? 0 : especie.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((idade == null) ? 0 : idade.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((raca == null) ? 0 : raca.hashCode());
+		result = prime * result + ((random == null) ? 0 : random.hashCode());
 		return result;
 	}
 	@Override
@@ -105,15 +95,10 @@ public class Animal {
 		if (getClass() != obj.getClass())
 			return false;
 		Animal other = (Animal) obj;
-		if (cliente == null) {
-			if (other.cliente != null)
+		if (codCliente == null) {
+			if (other.codCliente != null)
 				return false;
-		} else if (!cliente.equals(other.cliente))
-			return false;
-		if (dataNascimento == null) {
-			if (other.dataNascimento != null)
-				return false;
-		} else if (!dataNascimento.equals(other.dataNascimento))
+		} else if (!codCliente.equals(other.codCliente))
 			return false;
 		if (especie == null) {
 			if (other.especie != null)
@@ -137,8 +122,13 @@ public class Animal {
 				return false;
 		} else if (!raca.equals(other.raca))
 			return false;
+		if (random == null) {
+			if (other.random != null)
+				return false;
+		} else if (!random.equals(other.random))
+			return false;
 		return true;
 	}
-	
+		
 	
 }

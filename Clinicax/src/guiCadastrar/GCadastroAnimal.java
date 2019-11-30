@@ -37,9 +37,9 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 	
 	
 		
-	//ControlRepAnimal repAnimal = new ControlRepAnimal();
+	ControlRepAnimal repAnimal = new ControlRepAnimal();
 	
-	RepositorioCliente repCli = new RepositorioCliente();
+	//RepositorioCliente repCli = new RepositorioCliente();
 	
 	//Cliente cliente;
 	
@@ -56,29 +56,35 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 		String teste = (cpf.getText());
 		cliente.setCpf(teste);*/
 		
+		//String nome, String raca, String idade,String especie, String codCliente, LocalDate d
+		
+		container.add(new JLabel("Cpf:"));
+		cpf = new JTextField(16);
+		container.add(cpf);
+		
 		container.add(new JLabel("Nome"));		
 		nome = new JTextField(30);
 		container.add(nome);
 		String n = (nome.getText());
-		animal.setNome(n);
+		//animal.setNome(n);
 		
 		container.add( new JLabel("Raça"));
 		raca = new JTextField();
 		container.add(raca);
 		String r = (raca.getText());
-		animal.setRaca(r);
+		//animal.setRaca(r);
 		
 		container.add(new JLabel("Idade"));
 		idade = new JTextField();
 		container.add(idade);
 		String i = idade.getText();
- 		animal.setIdade(i);
+// 		animal.setIdade(i);
 		
 		container.add(new JLabel("Especie"));
 		especie  = new JTextField();
 		container.add(especie);
 		String e = especie.getText();
-		animal.setEspecie(e);
+	//	animal.setEspecie(e);
 		
 		//repCli = new RepositorioCliente();
 		
@@ -95,8 +101,16 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 		//cliente possui arraylist animal
 		
 		if(e.getSource() ==  ok)
-		{
+		{	
+			//String nome, String raca, String idade,String especie, String codCliente
+			Animal animal = new Animal(nome.getText(),raca.getText(),idade.getText(),especie.getText(),cpf.getText());
+			
+			//controlRepAnimal.adicionar(animal);
 			repAnimal.adicionar(animal);
+			
+			//GCadastro cadastro;
+			cadastro = new GCadastro();
+			dispose();
 		}
 				
 		if(e.getSource() == cancela)

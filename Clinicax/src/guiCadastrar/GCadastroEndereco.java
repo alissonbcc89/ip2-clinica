@@ -37,37 +37,37 @@ public class GCadastroEndereco extends JFrame implements ActionListener{
 		rua = new JTextField(20);
 		container.add(rua);
 		String r = rua.getText();
-		endereco.setRua(r);
+		//endereco.setRua(r);
 		
 		container.add(new JLabel("Bairro"));
 		bairro = new JTextField(20);
 		container.add(bairro);
 		String b = bairro.getText();
-		endereco.setBairro(b);
+		//endereco.setBairro(b);
 		
 		container.add(new JLabel("Cep"));
 		cep = new JTextField(16);
 		container.add(cep);
 		String c = cep.getText();
-		endereco.setCep(c);
+		//endereco.setCep(c);
 		
 		container.add(new JLabel("Estado"));
 		estado = new JTextField(20);
 		container.add(estado);
 		String e = estado.getText();
-		endereco.setEstado(e);
+		//endereco.setEstado(e);
 		
 		container.add(new JLabel("Numero"));
 		numero = new JTextField(20);
 		container.add(numero);
 		String n = numero.getText();
-		endereco.setNumero(n);
+		//endereco.setNumero(n);
 		
 		container.add(new JLabel("País"));
 		pais = new JTextField(20);
 		container.add(pais);
 		String p = pais.getText();
-		endereco.setPais(p);
+		//endereco.setPais(p);
 		
 		
 		

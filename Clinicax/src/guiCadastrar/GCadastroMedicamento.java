@@ -45,29 +45,29 @@ public class GCadastroMedicamento extends JFrame implements ActionListener {
 		quantidade  =  new JTextField(30);
 		container.add(quantidade);
 		int qtn = Integer.parseInt(quantidade.getText());
-		medicamento.setQnt(qtn);
+	//	medicamento.setQnt(qtn);
 		
 		container.add(new JLabel("Valor Compra"));
 		valorCompra =  new JTextField(30);
 		container.add(valorCompra);
 		double valor = Double.parseDouble(valorCompra.getText());
-		medicamento.setValorCompra(valor);
+	//	medicamento.setValorCompra(valor);
 	
 		double valorVenda = ((valor * 0.3) + valor);
 		
-		medicamento.setValorVenda(valorVenda);
+	//	medicamento.setValorVenda(valorVenda);
 		
 		container.add(new JLabel("Data Validade:"));
 		localValidade = new JTextField(8);
 		container.add(localValidade);
 		LocalDate agora = LocalDate.parse(localValidade.getText());
-		medicamento.setDataValidade(agora);
+		//medicamento.setDataValidade(agora);
 		
 		container.add(new JLabel("Lote"));
 		lote = new JTextField(20);
 		container.add(lote);
 		String l = lote.getText(); 
-		medicamento.setLote(l);
+	//	medicamento.setLote(l);
 		
 		ok = new JButton("OK");
 		container.add(ok);

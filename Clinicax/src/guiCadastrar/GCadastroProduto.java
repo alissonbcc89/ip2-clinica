@@ -46,31 +46,31 @@ public class GCadastroProduto extends JFrame implements ActionListener{
 		quantidade =  new JTextField(30);
 		container.add(quantidade);
 		int q = Integer.parseInt(quantidade.getText());
-		produtoReal.setQnt(q);
+	//	produtoReal.setQnt(q);
 		
 		
 		container.add(new JLabel ("Valor Compra:"));
 		valorCompra =  new JTextField(30);
 		container.add(valorCompra);
 		double vc = Double.parseDouble(valorCompra.getText());
-		produtoReal.setValorCompra(vc);
+	//	produtoReal.setValorCompra(vc);
 		
 		container.add(new JLabel ("Descricao:"));
 		descricao =  new JTextField(100);
 		container.add(descricao);
 		String d = descricao.getText();
-		produtoReal.setDescricao(d);
+	//	produtoReal.setDescricao(d);
 		
 		
 		container.add(new JLabel("Data Validade:"));
 		validade = new JTextField(8);
 		container.add(validade);
 		LocalDate agora = LocalDate.parse(validade.getText());
-		produtoReal.setDataValidade(agora);
+	//	produtoReal.setDataValidade(agora);
 		
 		double venda = produtoReal.getValorCompra() * 0.30 + produtoReal.getValorCompra();
 		
-		produtoReal.setValorVenda(venda);
+		//produtoReal.setValorVenda(venda);
 		
 
 		ok = new JButton("OK");

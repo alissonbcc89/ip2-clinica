@@ -36,7 +36,7 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 	
 	//JLabel cpf, bairro,cep,estado,numero,pais,nomea,idade,raca,especie;
 
-	JTextField rua, cpf,bairro,cep,estado,numero,pais,nome,idade,raca,especie;
+	JTextField rua, cpf,telefone,bairro,cep,estado,numero,pais,nome,idade,raca,especie;
 	
 	JButton adicionar, cancelar, voltar;
 	
@@ -56,7 +56,7 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 		super("Cadastro Cliente");
 		
 		//Pessoa cliente = new Cliente(nome.getText(), endereco, title, title, null);
-		
+		//String nome,Endereco end,String cpf, String t,LocalDate dataNascimento
 		Container container = getContentPane();
 		
 		container.setLayout(new GridLayout(53,2));
@@ -68,13 +68,17 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 		//cliente.setNome(teste);
 		
 		
-		
 		container.add(new JLabel ("CPF:"));
 		cpf = new JTextField(16);
 		container.add(cpf);
 		String aux = cpf.getText();
 		//cliente.setCpf(aux);
 		
+		container.add(new JLabel("Telefone"));
+		telefone = new JTextField(12);
+		container.add(telefone);
+		
+		//String rua, String bairro, String cep, String estado, String numero, String pais, String codigo
 		container.add(new JLabel("Rua"));
 		rua = new JTextField(20);
 		container.add(rua);
@@ -101,38 +105,38 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 		
 		container.add(new JLabel("Numero"));
 		numero = new JTextField(20);
-		//container.add(numero);
+		container.add(numero);
 		String n = numero.getText();
 		//endereco.setNumero(n);
 		
 		container.add(new JLabel("País"));
 		pais = new JTextField(20);
-		//container.add(pais);
+		container.add(pais);
 		String p = pais.getText();
 		//endereco.setPais(p);
 		
 		container.add(new JLabel("Nome"));
 		nome = new JTextField(30);
-	//	container.add(nome);
+		container.add(nome);
 		String an = nome.getText();
 		//animal.setNome(an);
 		
 		container.add( new JLabel("Raça"));
 		raca = new JTextField();
-		//container.add(raca);
+		container.add(raca);
 		String ra = raca.getText();
 		//animal.setRaca(ra);
 		
 		
 		container.add(new JLabel("Idade"));
 		idade = new JTextField();
-		//container.add(idade);
+		container.add(idade);
 		String id = idade.getText();
 	//	animal.setIdade(id);
 		
 		container.add(new JLabel("Especie"));
 		especie  = new JTextField();
-		//container.add(especie);
+		container.add(especie);
 		String esp = especie.getText();
 		//animal.setEspecie(esp);
 		
@@ -171,7 +175,10 @@ public class GCadastroCliente extends JFrame implements ActionListener{
 			//devo verificar construtor
 			//String rua, String bairro, String cep, String estado, String numero, String pais, String codigo
 			endereco = new Endereco(rua.getText(),bairro.getText(),cep.getText(),estado.getText(),numero.getText(),pais.getText(),cpf.getText());
-			animal= new Animal(nome.getText(),raca.getText(),idade.getText(),especie.getText(), cliente, null);
+			
+			//String nome, String raca, String idade,String especie, Cliente c, LocalDate d
+			animal= new Animal(nome.getText(),raca.getText(),idade.getText(),especie.getText(), cliente.getCpf());
+			
 			//String nome,Endereco end,String cpf, String t,LocalDate dataNascimento
 			cliente = new Cliente(nome.getText(),endereco,cpf.getText(),"9999999",null);
 			

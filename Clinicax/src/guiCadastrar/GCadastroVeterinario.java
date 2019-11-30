@@ -38,29 +38,29 @@ public class GCadastroVeterinario extends JFrame implements ActionListener {
 		nome =  new JTextField(30);
 		container.add(nome);
 		String teste = (nome.getText());
-		veterinario.setNome(teste);
+//		veterinario.setNome(teste);
 		
 		container.add(new JLabel ("CPF:"));
 		cpf = new JTextField(16);
 		container.add(cpf);
 		String aux = cpf.getText();
-		veterinario.setCpf(aux);
+//		veterinario.setCpf(aux);
 		
 		container.add(new JLabel("Data nascimento"));
 		dataNascimento = new JTextField(8);
 		container.add(dataNascimento);
 		LocalDate certa = LocalDate.parse(dataNascimento.getText());
-		veterinario.setDataNascimento(certa);
+	//	veterinario.setDataNascimento(certa);
 		
 		container.add(new JLabel("CRMV"));
 		crmv = new JTextField(16);
 		container.add(crmv);
 		String c = crmv.getText();
-		veterinario.setCrmv(c);
+	//	veterinario.setCrmv(c);
 		
 		
 		LocalDate cert = LocalDate.now();
-		veterinario.setDataAdmissao(cert);
+		//veterinario.setDataAdmissao(cert);
 		
 		//rua,bairro,cep,estado,numero,pais;
 		
@@ -68,39 +68,39 @@ public class GCadastroVeterinario extends JFrame implements ActionListener {
 		rua = new JTextField(16);
 		container.add(rua);
 		String r = rua.getText();
-		endereco.setRua(r);
+	//	endereco.setRua(r);
 		
 		container.add(new JLabel("Bairro:"));
 		bairro = new JTextField(16);
 		container.add(bairro);
 		String b = bairro.getText();
-		endereco.setBairro(b);
+	//	endereco.setBairro(b);
 		
 		container.add(new JLabel("Cep:"));
 		cep = new JTextField(16);
 		container.add(cep);
 		String ce = cep.getText();
-		endereco.setCep(ce);
+	//	endereco.setCep(ce);
 		
 		container.add(new JLabel("Estado:"));
 		estado = new JTextField(16);
 		container.add(estado);
 		String este = estado.getText();
-		endereco.setEstado(este);
+	//	endereco.setEstado(este);
 		
 		container.add(new JLabel("Numero:"));
 		numero = new JTextField(5);
 		container.add(numero);
 		String num = numero.getText();
-		endereco.setNumero(num);
+	//	endereco.setNumero(num);
 		
 		container.add(new JLabel("Pais:"));
 		pais = new JTextField(16);
 		container.add(pais);
 		String pa = pais.getText();
-		endereco.setPais(pa);
+	//	endereco.setPais(pa);
 		
-		veterinario.setEndereco(endereco);
+		//veterinario.setEndereco(endereco);
 		
 		
 		ok = new JButton("OK");
