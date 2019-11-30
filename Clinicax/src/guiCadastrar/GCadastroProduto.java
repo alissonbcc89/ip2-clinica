@@ -23,6 +23,12 @@ public class GCadastroProduto extends JFrame implements ActionListener{
 	
 	ControlRepProduto controlRepProduto;
 	
+	double valorC,valorVenda;
+	
+	int cod, q;
+	
+	LocalDate agora;
+	
 	JTextField codigo,nome,quantidade,valorCompra,validade,descricao;
 	
 	JButton ok, voltar;
@@ -34,6 +40,11 @@ public class GCadastroProduto extends JFrame implements ActionListener{
 	Container container = getContentPane();
 		
 		container.setLayout(new GridLayout(23,2));
+		
+		container.add(new JLabel("Digite o codigo do produto"));
+		codigo = new JTextField(30); 
+		container.add(codigo);
+		int cod = Integer.parseInt(codigo.getText());
 		
 		container.add(new JLabel ("Nome"));
 		nome =  new JTextField(30);
@@ -98,6 +109,9 @@ public class GCadastroProduto extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		if(e.getSource()== ok)
 		{
+			//int cod, String nome, int qnt, double valorVenda, double valorCompra, LocalDate dataValidade,String desc
+			produtoReal = new ProdutoReal(cod,nome.getText(),q,valorVenda,valorC,agora,descricao.getText());
+			
 			controlRepProduto.adicionar(produtoReal);
 			
 			GMain gMain = new GMain();

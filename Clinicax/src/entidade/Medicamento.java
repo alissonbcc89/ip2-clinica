@@ -10,15 +10,15 @@ import java.util.Random;
 public class Medicamento extends Produto {
 
 	private String lote;
-	private LocalDate dataValidade;
+	
 	
 //int cod, String nome, int qnt, double vv, double vc, LocalDate dataValidade
 	
-	public Medicamento(int cod, String nome, int qnt, double vv, double vc, LocalDate dataValidade, String lote,LocalDate validade) {
+	public Medicamento(int cod, String nome, int qnt, double vv, double vc, LocalDate dataValidade, String lote) {
 		// TODO Auto-generated constructor stub
 		super(cod, nome, qnt, vv, vc, dataValidade);
 		this.lote =lote;
-		this.dataValidade = validade;
+	
 		
 	}
 	  
@@ -43,17 +43,10 @@ public class Medicamento extends Produto {
 		this.lote = lote;
 	}
 
-	public LocalDate getDataValidade() {
-		return dataValidade;
-	}
-
-	public void setDataValidade(LocalDate dataValidade) {
-		this.dataValidade = dataValidade;
-	}
-
+	
 	@Override
 	public String toString() {
-		return "Medicamento [lote=" + lote + ", dataValidade=" + dataValidade + "]";
+		return "Medicamento [lote=" + lote ;
 	}
 
 	@Override

@@ -26,6 +26,8 @@ public class GCadastroVeterinario extends JFrame implements ActionListener {
 	
 	JButton ok,voltar;
 	
+	LocalDate certa,cert;
+	
 	public GCadastroVeterinario()
 	{
 		super("Cadastro Veterinario");
@@ -124,6 +126,11 @@ public class GCadastroVeterinario extends JFrame implements ActionListener {
 		// TODO Auto-generated method stub
 		if(e.getSource() == ok)
 		{	
+			//String rua, String bairro, String cep, String estado, String numero, String pais, String codigo
+			endereco = new Endereco(rua.getText(),bairro.getText(),cep.getText(),estado.getText(),numero.getText(),pais.getText(),cpf.getText());
+			
+			//String nome, Endereco enderco,String cpf,LocalDate dataNascimento, String crmv,LocalDate dataAdmissao
+			veterinario = new Veterinario(nome.getText(),endereco,cpf.getText(),certa,crmv.getText(),cert);
 			
 			controlRepVeterinario.adicionar(veterinario);
 			GMain gMain = new GMain();

@@ -21,6 +21,12 @@ public class GCadastroMedicamento extends JFrame implements ActionListener {
 	
 	Medicamento medicamento;
 	
+	int cod,qnt;
+	
+	double valorVenda,valor ;
+	
+	LocalDate agora;
+	
 	ControlRepMedicamento controlRepMedicamento = new ControlRepMedicamento();
 	
 	JTextField codigo,nome,quantidade,valorCompra,localValidade,lote;
@@ -41,11 +47,18 @@ public class GCadastroMedicamento extends JFrame implements ActionListener {
 		String teste = (nome.getText());
 		//medicamento.setNome(teste);
 		
+		container.add(new JLabel("Digite o codigo do medicamento "));
+		codigo = new JTextField(30);
+		container.add(codigo);
+		int cod = Integer.parseInt(quantidade.getText());
+		
 		container.add(new JLabel("Quantidade"));
 		quantidade  =  new JTextField(30);
 		container.add(quantidade);
 		int qtn = Integer.parseInt(quantidade.getText());
 	//	medicamento.setQnt(qtn);
+		
+		
 		
 		container.add(new JLabel("Valor Compra"));
 		valorCompra =  new JTextField(30);
@@ -69,7 +82,8 @@ public class GCadastroMedicamento extends JFrame implements ActionListener {
 		String l = lote.getText(); 
 	//	medicamento.setLote(l);
 		
-		ok = new JButton("OK");
+		ok =
+				new JButton("OK");
 		container.add(ok);
 		ok.addActionListener(this);
 		
@@ -89,8 +103,14 @@ public class GCadastroMedicamento extends JFrame implements ActionListener {
 		
 		if(e.getSource() == ok)
 		{
+			//int cod, String nome, int qnt, double vv, double vc, LocalDate dataValidade, String lote,LocalDate validade
+			
+			medicamento = new  Medicamento(cod,nome.getText(),qnt,valor,valorVenda,agora, lote.getText());
+			
 			controlRepMedicamento.adicionar(medicamento);
+			
 			GMain gMain = new GMain();
+			
 			dispose();
 		}
 		if(e.getSource() == voltar)
