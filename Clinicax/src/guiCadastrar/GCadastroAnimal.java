@@ -88,8 +88,22 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 		
 		//repCli = new RepositorioCliente();
 		
-		setSize(425,100);
-		setVisible(true);
+		ok = new JButton("OK");
+		container.add(ok);
+		ok.addActionListener(this);
+		
+		/*cancelar = new JButton("Cancelar");
+		container.add(cancelar);
+		cancelar.addActionListener(this);*/
+		
+		cancela = new JButton("Voltar");
+		container.add(cancela);
+		cancela.addActionListener(this);
+		
+		 
+		 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		 setSize(425,300);
+		 setVisible(true);		
 	}
 	
 
@@ -116,6 +130,7 @@ public class GCadastroAnimal extends JFrame implements ActionListener{
 		if(e.getSource() == cancela)
 		{
 			cadastro = new GCadastro();
+			dispose();
 		}
 		
 	}

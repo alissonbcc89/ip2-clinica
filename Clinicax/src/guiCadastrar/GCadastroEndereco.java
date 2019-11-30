@@ -24,6 +24,7 @@ public class GCadastroEndereco extends JFrame implements ActionListener{
 	ControlRepEndereco controlRepEndereco = new ControlRepEndereco();
 	
 	
+	
 	public GCadastroEndereco()
 	{
 		super("Registrando Endereco");

@@ -16,6 +16,9 @@ import main.GMain;
 import repositorio.ControlRepMedicamento;
 
 public class GCadastroMedicamento extends JFrame implements ActionListener {
+	
+	
+	GC gC;
 
 	//int cod, String nome, int qnt, double vv, double vc, LocalDate dataValidade, String lote,LocalDate validade
 	
@@ -44,18 +47,18 @@ public class GCadastroMedicamento extends JFrame implements ActionListener {
 		container.add(new JLabel ("Nome"));
 		nome =  new JTextField(30);
 		container.add(nome);
-		String teste = (nome.getText());
+		//String teste = (nome.getText());
 		//medicamento.setNome(teste);
 		
 		container.add(new JLabel("Digite o codigo do medicamento "));
 		codigo = new JTextField(30);
 		container.add(codigo);
-		int cod = Integer.parseInt(quantidade.getText());
+		//int cod = Integer.parseInt(quantidade.getText());
 		
 		container.add(new JLabel("Quantidade"));
 		quantidade  =  new JTextField(30);
 		container.add(quantidade);
-		int qtn = Integer.parseInt(quantidade.getText());
+		//int qtn = Integer.parseInt(quantidade.getText());
 	//	medicamento.setQnt(qtn);
 		
 		
@@ -63,27 +66,26 @@ public class GCadastroMedicamento extends JFrame implements ActionListener {
 		container.add(new JLabel("Valor Compra"));
 		valorCompra =  new JTextField(30);
 		container.add(valorCompra);
-		double valor = Double.parseDouble(valorCompra.getText());
+		//double valor = Double.parseDouble(valorCompra.getText());
 	//	medicamento.setValorCompra(valor);
 	
-		double valorVenda = ((valor * 0.3) + valor);
+		//double valorVenda = ((valor * 0.3) + valor);
 		
 	//	medicamento.setValorVenda(valorVenda);
 		
 		container.add(new JLabel("Data Validade:"));
 		localValidade = new JTextField(8);
 		container.add(localValidade);
-		LocalDate agora = LocalDate.parse(localValidade.getText());
+	//	LocalDate agora = LocalDate.parse(localValidade.getText());
 		//medicamento.setDataValidade(agora);
 		
 		container.add(new JLabel("Lote"));
 		lote = new JTextField(20);
 		container.add(lote);
-		String l = lote.getText(); 
+//		String l = lote.getText(); 
 	//	medicamento.setLote(l);
 		
-		ok =
-				new JButton("OK");
+		ok = new JButton("OK");
 		container.add(ok);
 		ok.addActionListener(this);
 		
@@ -103,19 +105,25 @@ public class GCadastroMedicamento extends JFrame implements ActionListener {
 		
 		if(e.getSource() == ok)
 		{
+			LocalDate agora = LocalDate.parse(localValidade.getText());
+			int qtn = Integer.parseInt(quantidade.getText());
+			int cod = Integer.parseInt(codigo.getText());
+			double valorVenda = ((valor * 0.3) + valor);
+			double valor = Double.parseDouble(valorCompra.getText());
+			
 			//int cod, String nome, int qnt, double vv, double vc, LocalDate dataValidade, String lote,LocalDate validade
 			
 			medicamento = new  Medicamento(cod,nome.getText(),qnt,valor,valorVenda,agora, lote.getText());
 			
 			controlRepMedicamento.adicionar(medicamento);
 			
-			GMain gMain = new GMain();
+			GC gC = new GC();
 			
 			dispose();
 		}
 		if(e.getSource() == voltar)
 		{
-			GMain gMain = new GMain();
+			GC gC = new GC();
 			dispose();
 		}
 		
