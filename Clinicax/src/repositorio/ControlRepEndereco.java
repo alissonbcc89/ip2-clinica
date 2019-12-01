@@ -67,4 +67,15 @@ public class ControlRepEndereco {
 		
 		return aux;
 	}
+	
+	public void atualizar(Endereco endereco)
+	{
+		for(int i = 0; i< repEnd.enderecos.size(); i ++)
+		{
+			if(repEnd.enderecos.get(i).getCpf().equals(endereco.getCpf()))
+			{
+				repEnd.enderecos.set(i, endereco);
+			}
+		}
+	}
 }
