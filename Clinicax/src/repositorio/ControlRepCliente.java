@@ -64,5 +64,24 @@ public class ControlRepCliente {
 		return aux;
 		
 	}
+	
+	public boolean retirar(String cpf)
+	{
+		boolean aux = false;
+		
+		for (int i = 0; i<repCli.clientes.size(); i++ )
+		{
+			
+			if(repCli.clientes.get(i).getCpf().equals(cpf))
+			{
+			 	aux = true;
+			 	repCli.remover(repCli.clientes.get(i));
+			}
+			
+		}
+		
+		return aux;
+		
+	}
 
 }

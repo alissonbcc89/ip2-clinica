@@ -180,6 +180,20 @@ public class ControlRepFuncionario {
 		}
 	}
 	
+	public boolean retirar(String cpf)
+	{
+		boolean aux = false;
+		for(int i = 0; i<repFunc.funcionarios.size(); i ++ )
+		{
+			if(repFunc.funcionarios.get(i).getCpf().equals(cpf))
+			{
+				repFunc.excluir(repFunc.funcionarios.get(i));
+				aux = true;
+			}
+			
+		}
+		return aux;
+	}
 	
 }
 

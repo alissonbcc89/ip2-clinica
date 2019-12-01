@@ -18,7 +18,7 @@ public class ControlRepAnimal {
 	//	animais.get(i).setNome(animal);
 		for(int i = 0; i< repAnimais.animais.size(); i++)
 		{
-			if(repAnimais.animais.get(i).getCliente().getCpf().equals(animal.getCliente().getCpf()))
+			if(repAnimais.animais.get(i).getCodCliente().equals(animal.getCodCliente()))
 					{
 						repAnimais.animais.set(i,animal);
 					}
@@ -49,5 +49,19 @@ public class ControlRepAnimal {
 		repAnimais.excluir(animal);
 	}
 	
-	
+	public boolean retirando(String cpf, String nome)
+	{
+		boolean aux = false;
+		
+		for(int i = 0; i < repAnimais.animais.size(); i++)
+		{
+			if(repAnimais.animais.get(i).getNome().equals(nome) && repAnimais.animais.get(i).getCodCliente().equals(cpf))
+			{
+				
+				repAnimais.excluir(repAnimais.animais.get(i));
+				aux = true; 
+			}
+		}
+		return aux;
+	}
 }

@@ -50,6 +50,20 @@ public class ControlRepDependente {
 		repDep.adicionar(dep);
 		
 	}
+	
+	public boolean retirar(String cpf,String nome)
+	{
+		boolean aux = false; 
+		for(int i = 0; i < repDep.dependentes.size(); i++)
+		{
+			if(repDep.dependentes.get(i).getCpf().equals(cpf) && repDep.dependentes.get(i).getNome().equals(nome))
+			{
+				repDep.remover(repDep.dependentes.get(i));
+				aux = true;
+			}
+		}
+		return aux;
+	}
 
 }
 

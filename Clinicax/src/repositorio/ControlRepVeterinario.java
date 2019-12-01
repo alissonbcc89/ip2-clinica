@@ -51,4 +51,24 @@ public class ControlRepVeterinario {
 		
 	}
 
+	public boolean retirar(String cpf)
+	{
+		boolean aux = false;
+		
+		for(int i = 0; i< repVet.veterinarios.size() ; i++ )
+		{
+			if(repVet.veterinarios.get(i).getCpf().equals(cpf))
+			{
+				repVet.remover(repVet.veterinarios.get(i));
+				aux = true;
+			}
+			if(repVet.veterinarios.get(i).getCrmv().equals(cpf))
+			{
+				repVet.remover(repVet.veterinarios.get(i));
+				
+				aux = true;
+			}
+		}
+		return aux;
+	}
 }

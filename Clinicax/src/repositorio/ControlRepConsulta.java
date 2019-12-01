@@ -68,6 +68,22 @@ public class ControlRepConsulta {
 	
 	}
 
-	
+	public boolean retirar(String nome)
+	{
+		boolean aux = false;
+		
+		
+		for(int i = 0; i < repConsulta.consultas.size(); i++)
+		{
+			if(repConsulta.consultas.get(i).getCpf().equals(nome))
+			{
+				repConsulta.remover(repConsulta.consultas.get(i));
+				
+				aux = true; 
+			}
+		}
+		
+		return aux;
+	}
 	
 }

@@ -51,4 +51,20 @@ public class ControlRepEndereco {
 	{
 		repEnd.adicionar(end);
 	}
+	
+	public boolean retirar(String cpf)
+	{
+		boolean aux = false;
+		
+		for(int i = 0; i< repEnd.enderecos.size(); i ++)
+		{
+			if(repEnd.enderecos.get(i).getCpf().equals(cpf))
+			{
+				repEnd.excluir(repEnd.enderecos.get(i));
+				aux = true; 
+			}
+		}
+		
+		return aux;
+	}
 }

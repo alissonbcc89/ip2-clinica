@@ -97,7 +97,20 @@ public class ControlRepProduto {
 		
 	}
 	
-
+	public boolean retirar(int cod)
+	{
+		boolean aux = false;
+		
+		for(int i = 0; i < repProd.prodReal.size(); i++)
+		{
+			if(repProd.prodReal.get(i).getCod() == cod)
+			{
+				repProd.remover(repProd.prodReal.get(i));
+				aux = true; 
+			}
+		}
+		return aux;
+	}
 
 	
 }

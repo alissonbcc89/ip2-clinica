@@ -49,14 +49,17 @@ public class Medicamento extends Produto {
 		return "Medicamento [lote=" + lote ;
 	}
 
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((dataValidade == null) ? 0 : dataValidade.hashCode());
 		result = prime * result + ((lote == null) ? 0 : lote.hashCode());
 		return result;
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -67,11 +70,6 @@ public class Medicamento extends Produto {
 		if (getClass() != obj.getClass())
 			return false;
 		Medicamento other = (Medicamento) obj;
-		if (dataValidade == null) {
-			if (other.dataValidade != null)
-				return false;
-		} else if (!dataValidade.equals(other.dataValidade))
-			return false;
 		if (lote == null) {
 			if (other.lote != null)
 				return false;
@@ -79,4 +77,6 @@ public class Medicamento extends Produto {
 			return false;
 		return true;
 	}
+
+	
 }

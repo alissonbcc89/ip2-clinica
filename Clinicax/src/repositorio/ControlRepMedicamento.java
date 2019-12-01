@@ -110,4 +110,20 @@ public class ControlRepMedicamento {
     	}
     	return aux;
     }
+    
+    public boolean retirar(int codigo)
+    {
+    	boolean aux = false;
+    	
+    	for(int i = 0; i < repMed.medicamentos.size(); i++)
+    	{
+    		if(repMed.medicamentos.get(i).getCod() == codigo)
+    		{
+    			repMed.remover(repMed.medicamentos.get(i));
+    			aux = true; 
+    		}
+    			
+    	}
+    	return aux;
+    }
 }

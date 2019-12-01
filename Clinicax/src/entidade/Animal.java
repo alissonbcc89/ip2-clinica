@@ -68,10 +68,10 @@ public class Animal {
 	public void setIdade(String idade) {
 		this.idade = idade;
 	}
-	
 	@Override
 	public String toString() {
-		return "\n Animal\n Codigo:"+id +"\n nome:" + nome + "\n raca:" + raca + "\n idade:" + idade + "\n especie:" + especie + "\n Pertence:"+codCliente;
+		return "Animal [id=" + id + ", nome=" + nome + ", raca=" + raca + ", idade=" + idade + ", especie=" + especie
+				+ ", codCliente=" + codCliente + ", random=" + random + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -129,6 +129,6 @@ public class Animal {
 			return false;
 		return true;
 	}
-		
 	
+		
 }
