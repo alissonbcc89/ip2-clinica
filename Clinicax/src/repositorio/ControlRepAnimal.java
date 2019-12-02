@@ -4,7 +4,7 @@ import entidade.Animal;
 
 public class ControlRepAnimal {
 	
-	RepositorioAnimal repAnimais;
+	public RepositorioAnimal repAnimais;
 	
 	
 	public ControlRepAnimal()
@@ -63,5 +63,20 @@ public class ControlRepAnimal {
 			}
 		}
 		return aux;
+	}
+	
+	public void retornaId(int id)
+	{
+		Animal repAni =  null;;
+		
+		for(int i = 0; i< repAnimais.animais.size(); i++)
+		{
+			if(repAnimais.animais.get(i).getId() == id)
+			{
+				repAni = repAnimais.animais.get(i);
+			}
+		}
+		  
+		  System.out.println(repAni);
 	}
 }

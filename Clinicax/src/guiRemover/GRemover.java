@@ -66,6 +66,9 @@ public class GRemover extends JFrame implements ActionListener {
 		exclusaoVeterinario = new JButton("Excluir Veterinario");
 		container.add(exclusaoVeterinario);
 		exclusaoVeterinario.addActionListener(this);
+		
+		 setSize(425,100);
+		 setVisible(true);	
 	}
 	
 	@Override

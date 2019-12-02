@@ -11,7 +11,7 @@ public class RepositorioAnimal implements IAnimal{
 	
 	ControlRepAnimal controlRepAnimal;
 	
-	ArrayList<Animal> animais;
+	public ArrayList<Animal> animais;
 	private static RepositorioAnimal instance;
 	
 	private RepositorioAnimal ()
@@ -68,5 +68,7 @@ public class RepositorioAnimal implements IAnimal{
 	//	
 		controlRepAnimal.alterar(animal);
 	}
+	
+	
 
 }
