@@ -65,9 +65,9 @@ public class ControlRepAnimal {
 		return aux;
 	}
 	
-	public void retornaId(int id)
+	public Animal retornaId(int id)
 	{
-		Animal repAni =  null;;
+		Animal repAni =  null;
 		
 		for(int i = 0; i< repAnimais.animais.size(); i++)
 		{
@@ -77,6 +77,6 @@ public class ControlRepAnimal {
 			}
 		}
 		  
-		  System.out.println(repAni);
+		   return repAni;
 	}
 }

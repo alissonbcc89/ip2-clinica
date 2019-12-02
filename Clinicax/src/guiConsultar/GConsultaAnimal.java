@@ -10,8 +10,10 @@ import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import entidade.Animal;
 import gui.GTelaPrincipal;
 import repositorio.ControlRepAnimal;
 import repositorio.RepositorioAnimal;
@@ -24,12 +26,14 @@ public class GConsultaAnimal extends JFrame implements ActionListener{
 	
 	GTelaPrincipal gTelaPRincipal;
 	
+	Animal animal;
+	
 
 	JButton ok, cancela;
 	
 	public GConsultaAnimal()
 	{
-		super("Excluir Animal");
+		super("Buscar Animal");
 		
 		Container container = getContentPane();
 		container.setLayout(new GridLayout(23,2));
@@ -70,7 +74,10 @@ public class GConsultaAnimal extends JFrame implements ActionListener{
 		{
 			
 			int identidade = Integer.parseInt(id.getText());
-			controlRepAnimal.retornaId(identidade);
+			animal = controlRepAnimal.retornaId(identidade);
+			
+			
+			JOptionPane.showMessageDialog(null,controlRepAnimal.retornaId(identidade));
 			
 			
 		}
