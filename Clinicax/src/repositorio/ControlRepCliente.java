@@ -84,4 +84,17 @@ public class ControlRepCliente {
 		
 	}
 
+	public Cliente retornaId(String cpf)
+	{
+		Cliente c = null;
+		
+		for(int i = 0; i< repCli.clientes.size(); i++)
+		{
+			if(repCli.clientes.get(i).getCpf().equals(cpf))
+			{
+				c = repCli.clientes.get(i);
+			}
+		}
+		return c;
+	}
 }

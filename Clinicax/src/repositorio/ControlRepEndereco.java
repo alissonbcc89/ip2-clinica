@@ -78,4 +78,18 @@ public class ControlRepEndereco {
 			}
 		}
 	}
+	
+	public Endereco retornaId(String cpf)
+	{
+		Endereco end = null;
+		
+		for(int i = 0 ; i < repEnd.enderecos.size(); i++) 
+		{
+			if(repEnd.enderecos.get(i).getCpf().contentEquals(cpf))
+			{
+				end = repEnd.enderecos.get(i);
+			}
+		}
+		return end;
+	}
 }

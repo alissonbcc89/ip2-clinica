@@ -71,4 +71,18 @@ public class ControlRepVeterinario {
 		}
 		return aux;
 	}
+	public Veterinario retornaId(String crmv)
+	{
+		Veterinario vet =  null;
+		
+		for(int i = 0; i< repVet.veterinarios.size() ; i++ )
+		{
+			if(repVet.veterinarios.get(i).getCrmv().equals(crmv))
+			{
+				vet = repVet.veterinarios.get(i);
+			}
+		}
+		
+		return vet;
+	}
 }

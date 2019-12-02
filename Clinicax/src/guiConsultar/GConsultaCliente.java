@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import entidade.Cliente;
+import gui.GTelaPrincipal;
 import repositorio.ControlRepCliente;
 
 public class GConsultaCliente extends JFrame implements ActionListener{
@@ -22,15 +23,21 @@ public class GConsultaCliente extends JFrame implements ActionListener{
 	
 	JButton ok, voltar;
 	
-	ArrayList<ControlRepCliente> controlRepCliente;
+	ControlRepCliente controlRepCliente;
+	
+	GTelaPrincipal gTelaPrincipal;
+	
+	
+	
+	//ArrayList<ControlRepCliente> controlRepCliente;
 	
 	public GConsultaCliente()
 	{
 		
 		
-		super("Digite o cpf");
+		super("Buscar Cliente");
 		
-		controlRepCliente = new ArrayList<ControlRepCliente>();
+		//controlRepCliente = new ArrayList<ControlRepCliente>();
 		
 		Container container = getContentPane();
 		
@@ -39,8 +46,8 @@ public class GConsultaCliente extends JFrame implements ActionListener{
 		container.add(new JLabel ("CPF"));
 		cpf =  new JTextField(30);
 		container.add(cpf);
-		String teste = (cpf.getText());
-		cliente.setCpf(teste);
+	//	String teste = (cpf.getText());
+	//	cliente.setCpf(teste);
 		
 		
 		ok = new JButton("OK");
@@ -63,17 +70,17 @@ public class GConsultaCliente extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		if(e.getSource() == ok)
 		{
-			for(int i= 0; i< controlRepCliente.size(); i++)
-			{
-				//String aux = cpf.getText
-					JOptionPane.showInputDialog(controlRepCliente.get(i).buscarCpf(cliente.getCpf()));
+					
+				
+			JOptionPane.showMessageDialog(null,controlRepCliente.retornaId(cpf.getText()));
+			
+			GTelaPrincipal gTelaPrincipal = new GTelaPrincipal();
 
-			}		
 			
 		}
 		if(e.getSource() == voltar)
 		{
-			GConsulta gConsulta = new GConsulta();
+			GTelaPrincipal gTelaPrincipal = new GTelaPrincipal();
 			dispose();
 		}
 		}

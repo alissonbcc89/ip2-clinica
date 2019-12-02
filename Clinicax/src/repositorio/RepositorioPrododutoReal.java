@@ -49,20 +49,25 @@ public class RepositorioPrododutoReal implements IProdReal {
 	public void removeQnt(int cod, int n) {
 		// TODO Auto-generated method stub
 		
-		controlRepProd.removerQnt(cod, n);
+		controlRepProd.removeQnt(cod, n);
 		
 	}
 
 	@Override
 	public ProdutoReal buscar(ProdutoReal produto) {
 		// TODO Auto-generated method stub
-			return controlRepProd.buscar(produto);
-	}
+			return controlRepProd.buscar(produto.getCod());
 
 	@Override
 	public void adicionarQtn(ProdutoReal produto) {
 		// TODO Auto-generated method stub
 		controlRepProd.adicionarQtn(produto);
+		
+	}
+
+	@Override
+	public void adicionarQtn(int codigo, int quantidade) {
+		// TODO Auto-generated method stub
 		
 	}
 

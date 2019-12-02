@@ -2,8 +2,7 @@ package repositorio;
 
 import java.util.ArrayList;
 
-import com.sun.glass.ui.Size;
-import com.sun.javafx.iio.ios.IosDescriptor;
+
 
 import entidade.Funcionario;
 
@@ -193,6 +192,20 @@ public class ControlRepFuncionario {
 			
 		}
 		return aux;
+	}
+	
+	public Funcionario retornaId(String cpf)
+	{
+		Funcionario funcio = null;
+		
+		for(int i = 0; i < repFunc.funcionarios.size(); i++)
+		{
+			if(repFunc.funcionarios.get(i).getCpf().equals(cpf))
+			{
+				funcio = repFunc.funcionarios.get(i);
+			}
+		}
+		return funcio;
 	}
 	
 }

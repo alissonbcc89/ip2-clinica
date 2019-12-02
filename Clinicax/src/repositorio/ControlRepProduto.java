@@ -111,6 +111,22 @@ public class ControlRepProduto {
 		}
 		return aux;
 	}
+	
+	public ProdutoReal retornaId(int cod)
+	{
+		ProdutoReal prodReal = null;
+		
+		for(int i = 0; i < repProd.prodReal.size(); i++)
+		{
+			if(repProd.prodReal.get(i).getCod() == cod)
+			{
+				prodReal = repProd.prodReal.get(i);
+			}
+				
+		}
+		return prodReal;
+	}
+	
 
 	
 }

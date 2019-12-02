@@ -86,4 +86,18 @@ public class ControlRepConsulta {
 		return aux;
 	}
 	
+	public Consulta retornaId(int id)
+	{
+		Consulta cons = null;
+		
+		for(int i = 0;i < repConsulta.consultas.size(); i++)
+		{
+			if(repConsulta.consultas.get(i).getId() == id)
+			{
+					cons = repConsulta.consultas.get(i);
+			}
+		}
+		return cons;
+	}
+	
 }

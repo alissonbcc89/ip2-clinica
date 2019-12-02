@@ -126,4 +126,18 @@ public class ControlRepMedicamento {
     	}
     	return aux;
     }
+    
+    public Medicamento retornaId(int cod)
+    {
+    	Medicamento med = null;
+    	
+    	for(int i = 0; i < repMed.medicamentos.size(); i++)
+    	{
+    		if(repMed.medicamentos.get(i).getCod() == cod)
+    		{
+    			med = repMed.medicamentos.get(i);
+    		}
+    	}
+    	return med;
+    }
 }
