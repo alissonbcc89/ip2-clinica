@@ -15,9 +15,14 @@ import entidade.Medicamento;
 import guiCadastrar.GC;
 import repositorio.ControlRepMedicamento;
 
-public class GAtualizarMedicamento public class GCadastroMedicamento extends JFrame implements ActionListener {
+public class GAtualizarMedicamento  extends JFrame implements ActionListener {
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	GC gC;
 
 	//int cod, String nome, int qnt, double vv, double vc, LocalDate dataValidade, String lote,LocalDate validade
@@ -36,9 +41,9 @@ public class GAtualizarMedicamento public class GCadastroMedicamento extends JFr
 	
 	JButton ok,voltar;
 	
-	public GCadastroMedicamento()
+	public GAtualizarMedicamento()
 	{
-		super("Cadastro medicamento");
+		super("Atualizar medicamento");
 		
 	Container container = getContentPane();
 		

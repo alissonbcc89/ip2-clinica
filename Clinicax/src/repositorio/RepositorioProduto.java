@@ -47,13 +47,13 @@ public class RepositorioProduto implements IProduto{
 		}			
 	}
 	
-	public void removeQnt(String cod,int n)
+	public void removeQnt(int cod,int n)
 	{				
-		if(cod != null && n <0)
+		if(cod != 0 && n <0)
 			{
 				for(int i = 0; i< aux; i++)
 				{
-					if(produtos.get(i).getCod().equals(cod) || produtos.get(i).getNome().equals(cod))
+					if(produtos.get(i).getCod()== cod || produtos.get(i).getNome().equals(cod))
 					{
 						int total = produtos.get(i).getQnt() - n ;
 						
@@ -74,11 +74,11 @@ public class RepositorioProduto implements IProduto{
 			}
 		}
 	
-	public Produto buscarProduto(String cod)
+	public Produto buscarProduto(int cod)
 	{
 		for(int i = 0; i < aux; i++)
 		{
-			if(produtos.get(i).getCod() == cod || produtos.get(i).getNome() == cod)
+			if(produtos.get(i).getCod() == cod )
 			{
 				return produtos.get(i);
 			}
@@ -124,6 +124,7 @@ public class RepositorioProduto implements IProduto{
 		}
 		return null;
 	}
+
 	
 	
 }

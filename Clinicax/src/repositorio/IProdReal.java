@@ -13,6 +13,6 @@ void adicionar(ProdutoReal prod);
 	
 	public ProdutoReal buscar(ProdutoReal produto);
 	
-	public void adicionarQtn(int codigo, int quantidade);
+	public void adicionarQtn(ProdutoReal produto);
 	
 }

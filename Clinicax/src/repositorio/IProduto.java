@@ -8,7 +8,7 @@ public interface IProduto {
 	
 	void remover(Produto prod);
 	
-	void removeQnt(String cod,int n);
+	void removeQnt(int cod,int n);
 	
 	public Produto buscar(Produto produto);
 	

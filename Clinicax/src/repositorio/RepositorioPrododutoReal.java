@@ -56,8 +56,14 @@ public class RepositorioPrododutoReal implements IProdReal {
 	@Override
 	public ProdutoReal buscar(ProdutoReal produto) {
 		// TODO Auto-generated method stub
-			return controlRepProd.buscar(produto.getCod());
-
+		
+		ProdutoReal prodReal;
+		prodReal  = controlRepProd.buscar(produto.getCod());
+		
+			return prodReal;
+			
+	}
+	
 	@Override
 	public void adicionarQtn(ProdutoReal produto) {
 		// TODO Auto-generated method stub
@@ -65,11 +71,7 @@ public class RepositorioPrododutoReal implements IProdReal {
 		
 	}
 
-	@Override
-	public void adicionarQtn(int codigo, int quantidade) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	/*@Override
 	public Produto buscar(ProdutoReal produto) {

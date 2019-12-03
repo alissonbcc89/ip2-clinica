@@ -18,6 +18,11 @@ import repositorio.ControlRepVeterinario;
 
 public class GAtualizarVeterinario extends JFrame implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	GC gC;
 	
 	ControlRepVeterinario controlRepVeterinario;
@@ -34,9 +39,9 @@ public class GAtualizarVeterinario extends JFrame implements ActionListener {
 	
 	LocalDate certa,cert;
 	
-	public GCadastroVeterinario()
+	public GAtualizarVeterinario()
 	{
-		super("Cadastro Veterinario");
+		super("Atualizar Veterinario");
 		
 		Container container = getContentPane();
 		
